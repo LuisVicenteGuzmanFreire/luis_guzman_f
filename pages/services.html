@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- Define el documento como HTML5 -->
+
+<html lang="es">
+<!-- Establece el idioma principal del contenido en español -->
+
+<head>
+    <!-- Inicio de la sección <head> donde se incluyen metadatos y recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres a UTF-8 para admitir caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la ventana gráfica para dispositivos móviles y asegura que la página sea responsive -->
+
+    <title>Servicios | Mi Portafolio</title>
+    <!-- Título que se muestra en la pestaña del navegador -->
+
+    <meta name="description" content="Servicios profesionales en geomática, teledetección y machine learning aplicado a la agricultura.">
+    <!-- Descripción breve de la página, útil para SEO -->
+
+    <meta name="keywords" content="Servicios, Geomática, SIG, Agricultura, Análisis Espacial, Cartografía, Teledetección, GIS, Machine Learning">
+
+
+    <!-- ============================ -->
+    <!-- Inclusión de hojas de estilo externas -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap CSS: Framework para diseño responsivo y componentes predefinidos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js CSS: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome CSS: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Hojas de estilo personalizadas para el sitio -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <!-- Se incluye la hoja de estilos para el modo oscuro -->
+    
+</head>
+
+<body>
+    <!-- Inicio del contenido visible de la página -->
+
+    <!-- Preloader: se muestra mientras el contenido de la página se carga -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Elemento con clase "spinner" que representa la animación de carga -->
+    </div>
+    
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se insertará de forma dinámica mediante JavaScript (ej. navbar.js) -->
+
+    <!-- Encabezado con banner para la página de Servicios -->
+    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('../assets/img/banner-services.jpg') no-repeat center center/cover; height: 60vh;">
+        <!-- Elemento <header> que actúa como banner, con fondo personalizado usando una imagen,
+             centrado vertical y horizontalmente mediante clases de Bootstrap y Flexbox.
+             El estilo en línea define la imagen de fondo, su posición y el alto (60% de la altura de la ventana) -->
+        <div class="container">
+            <!-- Contenedor para limitar el ancho del contenido y centrarlo dentro del banner -->
+            <h1 class="display-4" data-aos="fade-up">
+                Servicios Profesionales
+            </h1>
+            <!-- Título principal del banner con clase "display-4" de Bootstrap y animación "fade-up" (AOS) -->
+
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                Geomática, SIG, Machine Learning y más.
+            </p>
+            <!-- Párrafo descriptivo con estilo "lead", animación "fade-up" y un retraso de 100ms -->
+        </div>
+    </header>
+
+    <!-- Sección principal de Servicios -->
+    <section class="container mt-5">
+        <!-- Sección <section> con clase "container" para centrar y limitar el ancho, y "mt-5" para margen superior -->
+        <h2 class="text-center" data-aos="fade-up">¿Cómo puedo ayudarte?</h2>
+        <!-- Título de la sección, centrado y animado con "fade-up" -->
+
+        <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">
+            Ofrezco soluciones avanzadas en análisis geoespacial, teledetección y modelado predictivo.
+        </p>
+        <!-- Párrafo descriptivo de la sección, con estilo "lead", centrado y animación con retraso de 100ms -->
+
+        <!-- Fila para distribuir los servicios en columnas -->
+        <div class="row mt-4">
+            <!-- Fila de Bootstrap con margen superior para separar del título -->
+
+            <!-- Servicio 1: SIG y Cartografía -->
+            <div class="col-md-4" data-aos="zoom-in">
+                <!-- Columna de ancho 4 (1/3) en dispositivos medianos, con animación "zoom-in" -->
+                <div class="card text-center">
+                    <!-- Tarjeta con alineación de texto centrada -->
+                    <i class="fas fa-map-marked-alt fa-3x mt-3 text-primary"></i>
+                    <!-- Icono de mapa (FontAwesome) con tamaño 3x, margen superior y color primario -->
+                    <div class="card-body">
+                        <!-- Cuerpo de la tarjeta -->
+                        <h5 class="card-title">SIG y Cartografía</h5>
+                        <!-- Título de la tarjeta -->
+                        <p class="card-text">
+                            Análisis geoespacial con QGIS, ArcGIS y PostGIS para planificación y gestión territorial.
+                        </p>
+                        <!-- Breve descripción del servicio -->
+                        <a href="contact.html" class="btn btn-outline-primary">
+                            Más Información
+                        </a>
+                        <!-- Botón con estilo "outline-primary" que redirige a la página de contacto para obtener más detalles -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 2: Teledetección -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <!-- Columna para el segundo servicio, con animación "zoom-in" y retraso de 100ms -->
+                <div class="card text-center">
+                    <i class="fas fa-satellite fa-3x mt-3 text-success"></i>
+                    <!-- Icono de satélite con tamaño 3x, margen superior y color de éxito (verde) -->
+                    <div class="card-body">
+                        <h5 class="card-title">Teledetección</h5>
+                        <p class="card-text">
+                            Procesamiento de imágenes satelitales y drones para monitoreo ambiental y agrícola.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-success">
+                            Más Información
+                        </a>
+                        <!-- Botón para redirigir a contacto con estilo "outline-success" -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 3: Geoportales y Bases de Datos -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Columna para el tercer servicio, con animación "zoom-in" y retraso de 200ms -->
+                <div class="card text-center">
+                    <i class="fas fa-database fa-3x mt-3 text-info"></i>
+                    <!-- Icono de base de datos con tamaño 3x y color informativo -->
+                    <div class="card-body">
+                        <h5 class="card-title">Geoportales y Bases de Datos</h5>
+                        <p class="card-text">
+                            Desarrollo de plataformas interactivas con GeoServer y PostgreSQL/PostGIS.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-info">
+                            Más Información
+                        </a>
+                        <!-- Botón con estilo "outline-info" para más detalles -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 4: Avalúo de Inmuebles -->
+            <div class="col-md-4 mt-4" data-aos="zoom-in">
+                <!-- Columna para el servicio de Avalúo de Inmuebles; "mt-4" para iniciar una nueva fila -->
+                <div class="card text-center">
+                    <i class="fas fa-home fa-3x mt-3 text-warning"></i>
+                    <!-- Icono de hogar con tamaño 3x y color de advertencia (amarillo) -->
+                    <div class="card-body">
+                        <h5 class="card-title">Avalúo de Inmuebles</h5>
+                        <p class="card-text">
+                            Peritajes especializados en bienes inmuebles urbanos, rurales y agropecuarios.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-warning">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 5: Levantamientos Planimétricos -->
+            <div class="col-md-4 mt-4" data-aos="zoom-in">
+                <!-- Columna para el servicio de Levantamientos Planimétricos, con margen superior -->
+                <div class="card text-center">
+                    <i class="fas fa-ruler-combined fa-3x mt-3 text-secondary"></i>
+                    <!-- Icono de regla combinada con tamaño 3x y color secundario -->
+                    <div class="card-body">
+                        <h5 class="card-title">Levantamientos Planimétricos</h5>
+                        <p class="card-text">
+                            Estudios topográficos con GNSS y Estación Total para legalización de tierras.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-secondary">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 6: Planes de Manejo Integral -->
+            <div class="col-md-4 mt-4" data-aos="zoom-in">
+                <!-- Columna para el servicio de Planes de Manejo Integral -->
+                <div class="card text-center">
+                    <i class="fas fa-tree fa-3x mt-3 text-success"></i>
+                    <!-- Icono de árbol con tamaño 3x y color de éxito -->
+                    <div class="card-body">
+                        <h5 class="card-title">Planes de Manejo Integral</h5>
+                        <p class="card-text">
+                            Gestión agropecuaria y forestal bajo estándares de MAATE-MAG.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-success">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contenedor para el Footer -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (ej. footer.js) -->
+
+    <!-- ============================ -->
+    <!-- Inclusión de scripts externos y personalizados -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para activar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Scripts personalizados para cargar el navbar, footer y otras funcionalidades -->
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        AOS.init();
+        // Inicializa AOS para activar las animaciones definidas en los atributos data-aos
+    </script>
+
+</body>
+</html>

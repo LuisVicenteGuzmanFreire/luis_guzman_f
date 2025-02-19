@@ -1,0 +1,251 @@
+/* ======================== */
+/* ESTILOS GENERALES */
+/* ======================== */
+
+/* Define la tipografía y el tamaño de fuente base para el sitio */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.2rem); /* Ajuste de tamaño de fuente dinámico */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    background-color: #f4f7f6; /* Fondo claro predeterminado */
+    color: #1b1f2a; /* Color del texto */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ======================== */
+/* PRELOADER*/
+/* ======================== */
+
+/* Preloader: Fondo de carga que cubre toda la pantalla */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000; /* Fondo negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Spinner de carga */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animación del spinner */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* ======================== */
+/* TIPOGRAFÍA Y ENCABEZADOS */
+/* ======================== */
+
+/* Define la fuente secundaria y tamaño de encabezados */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Ajuste responsivo para títulos */
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* ======================== */
+/* COLORES PERSONALIZADOS */
+/* ======================== */
+
+:root {
+    --primary-color: #2d6a4f; /* Verde tecnológico */
+    --secondary-color: #40916c; /* Verde claro */
+    --highlight-color: #ffb703; /* Amarillo vibrante */
+    --hover-color: #faa307; /* Naranja */
+    --dark-bg: #1b1f2a; /* Fondo oscuro */
+    --light-bg: #f4f7f6; /* Fondo claro */
+}
+
+/* ======================== */
+/* ESTILOS DE LA NAVEGACIÓN */
+/* ======================== */
+
+/* Define el fondo y el padding de la barra de navegación */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--highlight-color) !important;
+    transform: scale(1.05);
+}
+
+/* ======================== */
+/* BOTONES PERSONALIZADOS */
+/* ======================== */
+
+.btn {
+    background-color: var(--highlight-color);
+    color: #1b1f2a;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================== */
+/* ESTILOS DEL FOOTER */
+/* ======================== */
+
+footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+/* ======================== */
+/* ICONOS DE REDES SOCIALES */
+/* ======================== */
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--highlight-color) !important;
+    transform: scale(1.2);
+}
+
+/* ======================== */
+/* ESTRUCTURA FLEXIBLE DEL CONTENIDO */
+/* ======================== */
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Mantiene el contenido flexible empujando el footer hacia abajo */
+}
+
+/* ======================== */
+/* ESTILOS RESPONSIVOS */
+/* ======================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+/* ======================== */
+/* ELIMINO MARKERS DE LA LISTA ARTICULOS RELACIONADOS */
+/* ======================== */
+.related-articles {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding-left: 0; /* Elimina la indentación */
+}
+
+.related-articles li {
+    margin: 7px 0; /* Ajuste de espaciado entre elementos */
+}
+
+/* ======================== */
+/* OCULTA COMPLETAMENTE EL ELEMENTO EN EL FILTRO DE PROYECTOS*/
+/* ======================== */
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* ======================== */
+/* ESTILOS PARA EL MAPA LEAFLET */
+/* ======================== */
+.map-container {
+    width: 100%;
+    height: 400px; /* 🔥 Ajusta la altura según lo necesites */
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+
+/* 🎨 Mejora visual para el botón activo de filtro */
+.filter-btn.active {
+    background-color: #007bff !important;
+    color: white !important;
+    border-color: #0056b3 !important;
+    transform: scale(1.05);
+}
+
+/* 🎨 Estilo para el enlace activo en la navbar en modo claro */
+.nav-link.active-nav {
+    font-weight: bold;
+    border-bottom: 2px solid var(--highlight-color, #007bff);
+    color: var(--highlight-color, #007bff) !important;
+}
+
+/* 🎨 Ajuste para modo oscuro */
+.dark-mode .nav-link.active-nav {
+    border-bottom: 2px solid #ffb703;
+    color: #ffb703 !important;
+}

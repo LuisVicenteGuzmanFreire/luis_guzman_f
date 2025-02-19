@@ -1,0 +1,63 @@
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <!-- Elemento <footer> que contiene la información del pie de página.
+         - bg-dark: establece un fondo oscuro.
+         - text-white: define el color del texto como blanco.
+         - text-center: centra el contenido textualmente.
+         - py-4: aplica padding vertical (arriba y abajo) de tamaño 4.
+         - mt-5: añade un margen superior para separar el footer del contenido anterior. -->
+
+    <div class="container">
+        <!-- Contenedor para limitar el ancho del contenido y centrarlo dentro del footer. -->
+
+        <p>&copy; 2025  Luis Vicente Guzmán Freire. Todos los derechos reservados.</p>
+        <!-- Párrafo que muestra la información de copyright. -->
+
+        <!-- Íconos de redes sociales -->
+        <div class="social-icons mt-3">
+            <!-- Contenedor para los íconos de redes sociales con un margen superior (mt-3) para separación. -->
+
+            <a href="https://www.facebook.com/TU_USUARIO" class="text-white me-3" target="_blank" rel="noopener noreferrer">
+                <!-- Enlace a Facebook:
+                     - text-white: el enlace se muestra en blanco.
+                     - me-3: margen a la derecha para separar los íconos.
+                     - target="_blank": abre el enlace en una nueva pestaña.
+                     - rel="noopener noreferrer": mejora la seguridad al abrir enlaces externos. -->
+                <i class="fab fa-facebook-f"></i>
+                <!-- Ícono de FontAwesome para Facebook. -->
+            </a>
+
+            <a href="https://www.twitter.com/TU_USUARIO" class="text-white me-3" target="_blank" rel="noopener noreferrer">
+                <!-- Enlace a Twitter con los mismos atributos y estilos que el anterior. -->
+                <i class="fab fa-twitter"></i>
+                <!-- Ícono de Twitter. -->
+            </a>
+
+            <a href="https://www.linkedin.com/in/TU_USUARIO" class="text-white me-3" target="_blank" rel="noopener noreferrer">
+                <!-- Enlace a LinkedIn con atributos de seguridad y estilo. -->
+                <i class="fab fa-linkedin-in"></i>
+                <!-- Ícono de LinkedIn. -->
+            </a>
+
+            <a href="https://www.instagram.com/TU_USUARIO" class="text-white" target="_blank" rel="noopener noreferrer">
+                <!-- Enlace a Instagram; no tiene margen a la derecha ya que es el último ícono. -->
+                <i class="fab fa-instagram"></i>
+                <!-- Ícono de Instagram. -->
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Cargar FontAwesome si no está presente -->
+<script>
+    // Comprueba si ya existe un enlace que incluya "font-awesome" en su href
+    if (!document.querySelector('link[href*="font-awesome"]')) {
+        let fa = document.createElement("link");
+        // Crea un nuevo elemento <link>
+        fa.rel = "stylesheet";
+        // Establece la relación a stylesheet para aplicar estilos
+        fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css";
+        // Define la URL de la hoja de estilos de FontAwesome
+        document.head.appendChild(fa);
+        // Añade el nuevo <link> al <head> del documento para cargar FontAwesome
+    }
+</script>

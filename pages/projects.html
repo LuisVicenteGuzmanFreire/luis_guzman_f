@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- Define el documento como HTML5 -->
+
+<html lang="es">
+<!-- Establece que el idioma principal del contenido es español -->
+
+<head>
+    <!-- Inicio de la sección de cabecera, donde se definen metadatos y se incluyen recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8, permitiendo el uso de caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la ventana gráfica para que la página sea responsive, adaptándose a distintos dispositivos -->
+
+    <title>Proyectos</title>
+    <!-- Título de la página, que se muestra en la pestaña del navegador -->
+
+    <meta name="description" content="Explora mis proyectos en geomática y agricultura.">
+    <!-- Breve descripción de la página, útil para SEO -->
+
+    <meta name="keywords" content="Proyectos, Geomática, SIG, Agricultura, Análisis Espacial, Cartografía, Machine Learning, GIS">
+
+
+    <!-- ============================ -->
+    <!-- Inclusión de hojas de estilo externas -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap CSS: Framework para diseño responsivo y componentes predefinidos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js CSS: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome CSS: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <!-- Se incluye la hoja de estilos para el modo oscuro -->
+    
+</head>
+
+<body>
+    <!-- Inicio del cuerpo del documento, donde se define el contenido visible -->
+
+    <!-- Preloader: se muestra mientras se carga el contenido de la página -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Elemento con clase "spinner" que muestra la animación de carga -->
+    </div>
+
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se insertará dinámicamente (por ejemplo, mediante navbar.js) -->
+
+    <!-- Contenedor principal del contenido de la página -->
+    <main class="container text-center mt-5">
+        <!-- "container": limita el ancho y centra el contenido; "text-center": centra el texto; "mt-5": margen superior -->
+
+        <h1 data-aos="fade-up">Proyectos</h1>
+        <!-- Título principal con animación "fade-up" al aparecer -->
+
+        <p data-aos="fade-up" data-aos-delay="200">
+            Explora mis proyectos en geomática y agricultura.
+        </p>
+        <!-- Párrafo descriptivo con animación "fade-up" y retraso de 200ms -->
+
+        <!-- Grupo de botones para filtrar los proyectos -->
+        <div class="btn-group d-flex flex-wrap justify-content-center my-4" role="group">
+            <!-- "btn-group": agrupa botones; "d-flex flex-wrap": permite que se distribuyan en línea y se envuelvan;
+                 "justify-content-center": centra el contenido; "my-4": margen vertical -->
+            <button class="btn btn-outline-primary filter-btn flex-fill" data-filter="all">
+                Todos
+            </button>
+            <!-- Botón para mostrar todos los proyectos, con clase "filter-btn" y atributo "data-filter" igual a "all" -->
+
+            <button class="btn btn-outline-primary filter-btn flex-fill" data-filter="gis">
+                GIS
+            </button>
+            <!-- Botón para filtrar proyectos de la categoría GIS -->
+
+            <button class="btn btn-outline-primary filter-btn flex-fill" data-filter="remote">
+                Teledetección
+            </button>
+            <!-- Botón para filtrar proyectos de la categoría Teledetección -->
+
+            <button class="btn btn-outline-primary filter-btn flex-fill" data-filter="data">
+                Análisis de Datos
+            </button>
+            <!-- Botón para filtrar proyectos de la categoría Análisis de Datos -->
+        </div>
+
+        <!-- Galería de proyectos -->
+        <div class="row" id="project-gallery">
+            <!-- Fila para distribuir las tarjetas de proyectos; "project-gallery" es el contenedor de la galería -->
+
+            <!-- Tarjeta de proyecto: GIS -->
+            <div class="col-md-4 project-card" data-category="gis" data-aos="zoom-in">
+                <!-- Columna de ancho 4 (1/3) en dispositivos medianos; "project-card" identifica la tarjeta; 
+                     "data-category" indica la categoría del proyecto; animación "zoom-in" al aparecer -->
+                <div class="card">
+                    <!-- Componente de tarjeta de Bootstrap -->
+                    <img src="img/proyecto1.jpg" class="card-img-top" alt="Proyecto GIS">
+                    <!-- Imagen del proyecto, situada en la parte superior de la tarjeta -->
+                    <div class="card-body">
+                        <!-- Cuerpo de la tarjeta -->
+                        <h5 class="card-title">Proyecto GIS</h5>
+                        <!-- Título del proyecto -->
+                        <p class="card-text">Análisis espacial con herramientas GIS.</p>
+                        <!-- Breve descripción del proyecto -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de proyecto: Teledetección -->
+            <div class="col-md-4 project-card" data-category="remote" data-aos="zoom-in" data-aos-delay="100">
+                <!-- Tarjeta para la categoría Teledetección, con animación "zoom-in" y retraso de 100ms -->
+                <div class="card">
+                    <img src="img/proyecto2.jpg" class="card-img-top" alt="Proyecto Teledetección">
+                    <!-- Imagen representativa del proyecto -->
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto Teledetección</h5>
+                        <p class="card-text">Uso de imágenes satelitales para monitoreo ambiental.</p>
+                        <!-- Descripción breve del proyecto -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de proyecto: Análisis de Datos -->
+            <div class="col-md-4 project-card" data-category="data" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Tarjeta para la categoría Análisis de Datos, con animación "zoom-in" y retraso de 200ms -->
+                <div class="card">
+                    <img src="img/proyecto3.jpg" class="card-img-top" alt="Proyecto Análisis de Datos">
+                    <!-- Imagen del proyecto -->
+                    <div class="card-body">
+                        <h5 class="card-title">Análisis de Datos</h5>
+                        <p class="card-text">Modelos predictivos y análisis estadístico.</p>
+                        <!-- Descripción breve del proyecto -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin de la galería de proyectos -->
+
+        <!-- Sección de Artículos Relacionados -->
+        <section class="container mt-5">
+            <!-- Contenedor para artículos relacionados, con margen superior -->
+            <h2>Artículos Relacionados</h2>
+            <!-- Título de la sección -->
+            <ul class="related-articles">
+                <!-- Lista de artículos relacionados -->
+                <li><a href="../blog/articulo1.html">Introducción a GIS</a></li>
+                <li><a href="../blog/articulo2.html">Teledetección aplicada</a></li>
+                <li><a href="../blog/articulo3.html">Big Data en Geomática</a></li>
+            </ul>
+        </section>
+        <!-- Fin de la sección de Artículos Relacionados -->
+
+    </main>
+    <!-- Fin del contenido principal -->
+
+    <!-- Contenedor para el Footer -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (ej. footer.js) -->
+
+    <!-- ============================ -->
+    <!-- Inclusión de scripts externos y personalizados -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para activar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Scripts personalizados: carga dinámica del navbar, footer y funcionalidades adicionales -->
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/filters.js"></script>
+
+    <script>
+        AOS.init();
+        // Inicializa AOS para activar las animaciones definidas mediante los atributos data-aos
+    </script>
+
+</body>
+</html>

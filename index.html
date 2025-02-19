@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- Indica que el documento utiliza HTML5 -->
+
+<html lang="es">
+<!-- Define el idioma principal del documento como español -->
+
+<head>
+    <!-- Inicio de la sección de cabecera del documento, donde se especifican metadatos y recursos externos -->
+    
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres a UTF-8, permitiendo el uso de caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la ventana gráfica para dispositivos móviles, garantizando que el contenido se escale adecuadamente -->
+
+    <title>Inicio | Mi Portafolio</title>
+    <!-- Establece el título que se mostrará en la pestaña del navegador -->
+
+    <meta name="description" content="Especialista en geomática, SIG y machine learning aplicado a la agricultura.">
+    <!-- Proporciona una descripción breve del contenido de la página para SEO -->
+
+    <meta name="keywords" content="Geomática, SIG, Machine Learning, Agricultura, Cartografía, Análisis Geoespacial, Mapas, Fotogrametría, GNSS, Teledetección">
+
+    <!-- ==================== -->
+    <!-- Incluir hojas de estilo externas -->
+    <!-- ==================== -->
+
+    <!-- Bootstrap: Framework CSS para diseño responsivo y componentes predefinidos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Hojas de estilo personalizadas para el sitio -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- Se incluye el archivo de estilos para el modo oscuro -->
+    
+</head>
+
+<body>
+    <!-- Inicio del cuerpo del documento, donde se define el contenido visible -->
+
+    <!-- Preloader: se muestra mientras se carga el contenido de la página -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Spinner animado para indicar que se está cargando la página -->
+    </div>
+
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se cargará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
+
+    <!-- Banner Principal -->
+    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('assets/img/banner.jpg') no-repeat center center/cover; height: 90vh;">
+        <!-- Elemento header que actúa como banner principal con fondo de imagen -->
+        <!-- Se utilizan clases de Bootstrap y utilidades para centrar el contenido vertical y horizontalmente -->
+        <!-- El estilo en línea define el fondo (imagen, posición y cobertura) y la altura (90% de la ventana) -->
+        
+        <div class="container">
+            <!-- Contenedor para centrar y limitar el ancho del contenido dentro del banner -->
+            
+            <h1 class="display-4" data-aos="fade-up">
+                Geomática, SIG & Machine Learning
+            </h1>
+            <!-- Título principal con clase de Bootstrap para tipografía grande y efecto de animación (fade-up) -->
+            
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                Impulsando la agricultura y el medio ambiente con tecnologías geoespaciales.
+            </p>
+            <!-- Párrafo descriptivo con estilo "lead" para resaltar el texto; animación con un retraso de 100ms -->
+
+            <a href="pages/about.html" class="btn btn-primary btn-lg m-2" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-user"></i> Conóceme
+            </a>
+            <!-- Botón que redirige a la página "Sobre Mí", con icono de usuario, estilos de Bootstrap y animación con 200ms de retraso -->
+
+            <a href="pages/projects.html" class="btn btn-outline-light btn-lg m-2" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-laptop-code"></i> Mis Proyectos
+            </a>
+            <!-- Botón que redirige a la página de proyectos, con icono de código, estilo de botón delineado y animación con 300ms de retraso -->
+        </div>
+    </header>
+
+    <!-- Sección de Presentación -->
+    <section class="container mt-5 text-center">
+        <!-- Sección que presenta información personal, centrada y con margen superior (mt-5) -->
+        
+        <h2 data-aos="fade-up">¿Quién soy?</h2>
+        <!-- Título de la sección con animación de aparición -->
+
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">
+            Soy <strong>Luis Vicente Guzmán</strong>, especialista en <strong>SIG, teledetección y machine learning</strong> aplicado a la agricultura.
+            Con más de 7 años de experiencia, desarrollo soluciones innovadoras en análisis geoespacial y modelado de datos.
+        </p>
+        <!-- Párrafo descriptivo con estilo "lead" para resaltar la información y animación con 100ms de retraso -->
+
+        <a href="assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-file-download"></i> Descargar CV
+        </a>
+        <!-- Botón para descargar el currículum, con icono de descarga, margen superior y animación con 200ms de retraso -->
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="container mt-5">
+        <!-- Sección que muestra los servicios ofrecidos, con margen superior y contenido centrado -->
+        
+        <h2 class="text-center" data-aos="fade-up">Servicios</h2>
+        <!-- Título de la sección con animación -->
+
+        <div class="row text-center mt-4">
+            <!-- Fila de Bootstrap para distribuir tres columnas de servicios, centradas y con margen superior -->
+            
+            <div class="col-md-4" data-aos="zoom-in">
+                <!-- Primera columna para el servicio de SIG y Cartografía con animación de zoom-in -->
+                <i class="fas fa-map-marked-alt fa-3x mb-2"></i>
+                <!-- Icono representativo del servicio, tamaño 3x y margen inferior -->
+                <h5>SIG y Cartografía</h5>
+                <p>Generación de mapas y análisis geoespacial con QGIS, ArcGIS y PostGIS.</p>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <!-- Segunda columna para el servicio de Teledetección con animación de zoom-in y retraso de 100ms -->
+                <i class="fas fa-satellite fa-3x mb-2"></i>
+                <!-- Icono de satélite -->
+                <h5>Teledetección</h5>
+                <p>Procesamiento de imágenes satelitales con Google Earth Engine y Pix4D.</p>
+            </div>
+
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Tercera columna para el servicio de Machine Learning con animación de zoom-in y retraso de 200ms -->
+                <i class="fas fa-brain fa-3x mb-2"></i>
+                <!-- Icono de cerebro -->
+                <h5>Machine Learning</h5>
+                <p>Modelos predictivos aplicados a la agricultura con Python y TensorFlow.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <!-- Contenedor para el botón de "Ver todos los servicios", centrado y con margen superior -->
+            <a href="pages/services.html" class="btn btn-primary" data-aos="fade-up">
+                <i class="fas fa-list"></i> Ver todos los servicios
+            </a>
+            <!-- Botón que redirige a la página de servicios, con icono de lista y animación de aparición -->
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos Recientes -->
+    <section class="container mt-5">
+        <!-- Sección que muestra proyectos destacados con margen superior -->
+        
+        <h2 class="text-center" data-aos="fade-up">Proyectos Destacados</h2>
+        <!-- Título de la sección con animación -->
+
+        <div class="row mt-4">
+            <!-- Fila de Bootstrap para distribuir proyectos en columnas -->
+            
+            <div class="col-md-6" data-aos="fade-up">
+                <!-- Primera columna para el primer proyecto, con animación de aparición -->
+                <div class="card">
+                    <!-- Componente de tarjeta de Bootstrap -->
+                    <img src="assets/img/project1.jpg" class="card-img-top" alt="Proyecto 1">
+                    <!-- Imagen del proyecto, ubicada en la parte superior de la tarjeta -->
+                    <div class="card-body">
+                        <!-- Cuerpo de la tarjeta -->
+                        <h5 class="card-title">Monitoreo de Cultivos con Drones</h5>
+                        <!-- Título del proyecto -->
+                        <p class="card-text">Uso de sensores multiespectrales para optimización agrícola.</p>
+                        <!-- Descripción breve del proyecto -->
+                        <a href="pages/projects.html" class="btn btn-primary">Ver más</a>
+                        <!-- Botón para ver más detalles, redirige a la página de proyectos -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <!-- Segunda columna para el segundo proyecto, con animación y retraso de 100ms -->
+                <div class="card">
+                    <img src="assets/img/project2.jpg" class="card-img-top" alt="Proyecto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Geoportal para Agricultura de Precisión</h5>
+                        <p class="card-text">Desarrollo de plataformas interactivas para visualización de datos.</p>
+                        <a href="pages/projects.html" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (por ejemplo, desde footer.js) -->
+
+    <!-- ==================== -->
+    <!-- Inclusión de scripts -->
+    <!-- ==================== -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para manejar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Scripts personalizados para cargar el navbar, footer y funcionalidades adicionales -->
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        AOS.init(); // Inicializa AOS para activar las animaciones definidas con los atributos data-aos
+    </script>
+
+</body>
+</html>

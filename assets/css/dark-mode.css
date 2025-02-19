@@ -1,0 +1,75 @@
+/* ======================== */
+/* ESTILOS PARA MODO OSCURO */
+/* ======================== */
+
+/* Se asegura que el fondo sea oscuro y el texto sea blanco */
+/* ======================== */
+/* ESTILOS PARA MODO OSCURO */
+/* ======================== */
+
+body.dark-mode {
+    background-color: #1b1f2a;
+    color: white;
+}
+
+/* Ajustes para los encabezados */
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: #ffb703; /* Color amarillo vibrante */
+}
+
+/* Ajustes para la barra de navegación */
+.dark-mode .navbar, .dark-mode footer {
+    background-color: #12151d;
+}
+
+/* Estilos de enlaces en modo oscuro */
+.dark-mode a {
+    color: #ffb703;
+}
+
+.dark-mode a:hover {
+    color: #faa307;
+}
+
+/* Botón flotante del modo oscuro */
+.dark-mode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffb703;
+    color: #1b1f2a;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+.dark-mode-btn:hover {
+    background: #faa307;
+    transform: scale(1.1);
+}
+
+/* ======================== */
+/* CORREGIR BOTONES EN MODO OSCURO */
+/* ======================== */
+
+/* Asegurar que los botones sean visibles en modo oscuro */
+.dark-mode .btn {
+    background-color: #ffb703 !important; /* Color amarillo vibrante */
+    color: #1b1f2a !important; /* Texto oscuro para contraste */
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Cambiar el color al pasar el mouse */
+.dark-mode .btn:hover {
+    background-color: #faa307 !important; /* Un tono más oscuro para el hover */
+    color: #ffffff !important; /* Texto claro */
+}
+

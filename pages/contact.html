@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- Define el tipo de documento como HTML5 -->
+
+<html lang="es">
+<!-- Indica que el idioma principal del contenido es español -->
+
+<head>
+    <!-- Inicio de la sección de cabecera, donde se incluyen metadatos y enlaces a recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Configura la codificación de caracteres a UTF-8 para admitir caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Asegura que la página sea responsive, adaptándose a diferentes dispositivos -->
+
+    <title>Contacto</title>
+    <!-- Título de la página que se mostrará en la pestaña del navegador -->
+
+    <meta name="description" content="Ponte en contacto para consultas sobre geomática, SIG y proyectos de análisis espacial.">
+
+    <meta name="keywords" content="Contacto, Geomática, SIG, Análisis Espacial, Cartografía, Consultoría GIS, Teledetección">
+
+
+
+    <!-- ============================ -->
+    <!-- Inclusión de hojas de estilo y bibliotecas externas -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap CSS: Framework para diseño responsivo y componentes estilizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js CSS: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome CSS: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts: Importa tipografías personalizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS: Biblioteca para mapas interactivos -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <!-- Se incluye el CSS para el modo oscuro -->
+    
+</head>
+
+<body>
+
+    
+    <!-- Contenido de la página -->
+    <!-- Inicio del cuerpo del documento -->
+
+    <!-- Preloader: se muestra mientras se carga el contenido de la página -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Spinner animado que indica al usuario que la página se está cargando -->
+    </div>
+    
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se insertará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
+    
+    <!-- Contenido principal de la página -->
+    <!-- Sección de Contacto y Formulario -->
+    <main class="container mt-5">
+        <h1 class="display-4" data-aos="fade-up">
+            Contacto
+        </h1>
+        <div class="row align-items-stretch">
+            <!-- Información de Contacto -->
+            <div class="col-md-6 d-flex align-items-center" data-aos="fade-right">
+                <div class="card contact-card shadow-lg p-4 w-100 text-center">
+                    <i class="fa-solid fa-user-circle fa-4x text-primary mb-3"></i>
+                    <h4 class="mb-3">Luis Vicente Guzmán</h4>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone fa-lg text-success"></i>
+                        <a href="tel:+123456789" class="contact-link">+1 234 567 89</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope fa-lg text-danger"></i>
+                        <a href="mailto:correo@example.com" class="contact-link">correo@example.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-brands fa-whatsapp fa-lg text-success"></i>
+                        <a href="https://wa.me/123456789" target="_blank" class="contact-link">WhatsApp</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-map-marker-alt fa-lg text-warning"></i>
+                        <p class="contact-link">Ubicación: Quito, Ecuador</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Contacto -->
+            <div class="col-md-6 d-flex align-items-center" data-aos="fade-left">
+                <div class="card shadow-lg p-4 w-100">
+                    <h2 class="text-center mb-3">Envíame un mensaje</h2>
+                    <!-- Formulario de Contacto -->
+                    <form id="contact-form" class="contact-form needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                            <div class="invalid-feedback">Por favor, escribe un mensaje.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+
+                    <!-- Mensaje de éxito -->
+                    <div id="success-message" class="alert alert-success mt-3" style="display: none;">
+                        ✅ ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- "container": limita el ancho y centra el contenido; "text-center": centra el texto; "mt-5": margen superior -->
+
+        <!-- Mensaje de confirmación, inicialmente oculto -->
+        <div id="success-message" class="alert alert-success mt-3" style="display: none;">
+            ✅ ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+        </div>
+        <!-- Al enviarse correctamente el formulario, este mensaje se mostrará para confirmar el envío -->
+
+        <!-- Sección del Mapa Interactivo -->
+        <section class="container mt-5">
+            <!-- Contenedor de la sección del mapa, con margen superior -->
+            <h2 class="text-center" data-aos="fade-up">Ubicación</h2>
+            <!-- Título de la sección de ubicación, centrado y con animación "fade-up" -->
+            <p class="text-center" data-aos="fade-up" data-aos-delay="200">
+                Aquí puedes encontrar nuestra ubicación exacta.
+            </p>
+            <!-- Párrafo descriptivo con animación y retraso de 200ms -->
+            <div id="map" class="map-container"></div>
+            <!-- Contenedor donde se renderizará el mapa interactivo mediante Leaflet -->
+        </section>
+
+    </main>
+    <!-- Fin del contenido principal -->
+
+    <!-- Contenedor para el Footer -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (ej. footer.js) -->
+
+    <!-- ============================ -->
+    <!-- Inclusión de scripts externos y personalizados -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para activar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Leaflet JS para la generación del mapa interactivo -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    
+    <!-- Script para cargar dinámicamente el mapa (map.js) -->
+    <script src="../assets/js/map.js"></script>
+   
+    <!-- Script para cargar dinámicamente la barra de navegación -->
+    <script src="../assets/js/navbar.js"></script>
+
+    <!-- Script para cargar dinámicamente el pie de página -->
+    <script src="../assets/js/footer.js"></script>
+
+    <!-- Archivo JavaScript principal con funcionalidades adicionales -->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

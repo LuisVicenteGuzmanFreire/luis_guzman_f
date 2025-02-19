@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Define el documento como HTML5 -->
+
+<html lang="es">
+<!-- Establece que el idioma principal del contenido es español -->
+
+<head>
+    <!-- Inicio de la sección de cabecera, donde se definen metadatos y se incluyen recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8 para admitir caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la ventana gráfica para que la página sea responsive en distintos dispositivos -->
+
+    <title>Big Data en Geomática | Blog</title>
+    <!-- Título de la página que se mostrará en la pestaña del navegador -->
+
+    <meta name="description" content="Descubre cómo el análisis de grandes volúmenes de datos está revolucionando la geoinformación.">
+    <!-- Breve descripción del contenido del artículo para SEO -->
+
+    <meta name="keywords" content="Big Data, Geomática, Análisis Espacial, SIG, Ciencia de Datos, Machine Learning, Datos Geoespaciales">
+
+
+    <!-- ============================ -->
+    <!-- Inclusión de hojas de estilo externas -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap CSS: Framework para diseño responsivo y componentes estilizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js CSS: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome CSS: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <!-- Se incluye la hoja de estilos para el modo oscuro -->
+    
+</head>
+
+<body>
+    <!-- Inicio del cuerpo del documento, donde se muestra el contenido visible -->
+
+    <!-- Preloader: se muestra mientras la página se carga -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Elemento con clase "spinner" para la animación de carga -->
+    </div>
+
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se insertará dinámicamente mediante JavaScript (por ejemplo, navbar.js) -->
+
+    <!-- Contenido principal del artículo -->
+    <main class="container mt-5">
+        <!-- "container": centra y limita el ancho del contenido; "mt-5": margen superior -->
+
+        <div class="row">
+            <!-- Fila de Bootstrap para estructurar el contenido en columnas -->
+            <div class="col-lg-8">
+                <!-- Columna principal que ocupa 8/12 del ancho en pantallas grandes -->
+
+                <article class="blog-post">
+                    <!-- Elemento <article> que contiene el contenido del post -->
+                    
+                    <!-- Imagen destacada del artículo -->
+                    <img src="../assets/img/blog3.jpg" class="img-fluid rounded mb-4" alt="Big Data en Geomática">
+                    <!-- Imagen del artículo: "img-fluid" para responsividad, "rounded" para bordes redondeados, "mb-4" para margen inferior -->
+
+                    <h1 class="mb-3" data-aos="fade-up">Big Data en Geomática</h1>
+                    <!-- Título principal del artículo con margen inferior y animación "fade-up" -->
+
+                    <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-calendar-alt"></i> Publicado el 15 de febrero de 2024
+                    </p>
+                    <!-- Párrafo que muestra la fecha de publicación, con un icono de calendario y animación con 100ms de retraso -->
+
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        La gestión y análisis de grandes volúmenes de datos en el ámbito de la geomática ha permitido avances significativos en la cartografía, la teledetección y el modelado predictivo de fenómenos geoespaciales.
+                    </p>
+                    <!-- Párrafo introductorio del artículo, animado con 200ms de retraso -->
+
+                    <h2 data-aos="fade-up" data-aos-delay="300">¿Qué es Big Data en Geomática?</h2>
+                    <!-- Subtítulo con animación "fade-up" y retraso de 300ms -->
+                    
+                    <p data-aos="fade-up" data-aos-delay="400">
+                        El Big Data en geomática implica el procesamiento de grandes conjuntos de datos espaciales obtenidos a través de sensores remotos, redes de satélites y estaciones de monitoreo.
+                    </p>
+                    <!-- Párrafo que explica el concepto, animado con 400ms de retraso -->
+
+                    <blockquote class="blockquote text-center p-3 my-4 bg-light border-start border-primary" data-aos="fade-up" data-aos-delay="500">
+                        "La capacidad de analizar datos espaciales en tiempo real está transformando la toma de decisiones en la gestión territorial."
+                    </blockquote>
+                    <!-- Cita destacada, centrada y con estilos para resaltar (padding, márgenes, fondo claro y borde izquierdo), animada con 500ms de retraso -->
+
+                    <h2 data-aos="fade-up" data-aos-delay="600">Aplicaciones en la Gestión Territorial</h2>
+                    <!-- Otro subtítulo, animado con 600ms de retraso -->
+
+                    <p data-aos="fade-up" data-aos-delay="700">
+                        Big Data permite el desarrollo de modelos predictivos para el cambio climático, la planificación urbana y la gestión de recursos naturales, integrando múltiples fuentes de datos en tiempo real.
+                    </p>
+                    <!-- Párrafo que describe las aplicaciones prácticas, con animación y retraso de 700ms -->
+
+                    <!-- Botones de compartir en redes sociales -->
+                    <div class="share-buttons mt-4" data-aos="fade-up" data-aos-delay="800">
+                        <!-- Contenedor para los botones de compartir, con margen superior y animación "fade-up" con 800ms de retraso -->
+                        <p>📢 Comparte este artículo:</p>
+                        <!-- Texto introductorio para los botones de compartir -->
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <!-- Botón para compartir en Facebook, con estilo "outline-primary" y tamaño pequeño -->
+
+                        <a href="#" class="btn btn-outline-info btn-sm">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <!-- Botón para compartir en Twitter, con estilo "outline-info" -->
+
+                        <a href="#" class="btn btn-outline-danger btn-sm">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <!-- Botón para compartir en WhatsApp, con estilo "outline-danger" -->
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar con artículos relacionados -->
+            <div class="col-lg-4">
+                <!-- Columna secundaria que ocupa 4/12 del ancho en pantallas grandes -->
+
+                <aside class="sidebar bg-light p-4 rounded">
+                    <!-- Elemento <aside> que contiene el sidebar; "bg-light": fondo claro; "p-4": padding; "rounded": bordes redondeados -->
+                    <h4 class="mb-3">Artículos relacionados</h4>
+                    <!-- Título del sidebar con margen inferior -->
+                    <ul class="list-unstyled">
+                        <!-- Lista sin viñetas para los enlaces de artículos relacionados -->
+                        <li><a href="articulo1.html">📌 Introducción a GIS</a></li>
+                        <li><a href="articulo2.html">📌 Teledetección aplicada</a></li>
+                        <li><a href="../pages/blog.html">📌 Ver todos los artículos</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <!-- Fin del contenido principal -->
+
+    <!-- Contenedor para el Footer -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (por ejemplo, desde footer.js) -->
+
+    <!-- ============================ -->
+    <!-- Inclusión de scripts externos y personalizados -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para activar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Script para cargar dinámicamente la barra de navegación -->
+    <script src="../assets/js/navbar.js"></script>
+
+    <!-- Script para cargar dinámicamente el pie de página -->
+    <script src="../assets/js/footer.js"></script>
+
+    <!-- Archivo JavaScript principal con funcionalidades adicionales -->
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

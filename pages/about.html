@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- Define que el documento utiliza HTML5 -->
+
+<html lang="es">
+<!-- Establece que el idioma principal del contenido es español -->
+
+<head>
+    <!-- Inicio de la sección de cabecera donde se incluyen metadatos y enlaces a recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la ventana gráfica para que la página sea responsive en distintos dispositivos -->
+
+    <title>Sobre Mí | Mi Portafolio</title>
+    <!-- Título de la página, que se muestra en la pestaña del navegador -->
+
+    <meta name="description" content="Conoce más sobre mi experiencia en geomática, teledetección y machine learning aplicado a la agricultura.">
+    <!-- Breve descripción de la página, útil para SEO -->`
+
+    <meta name="keywords" content="Geomática, SIG, Análisis Espacial, Agricultura, Cartografía, Datos Geoespaciales, GIS, Teledetección">
+
+    <!-- ============================ -->
+    <!-- Inclusión de hojas de estilo y bibliotecas externas -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap CSS: Framework para diseño responsivo y componentes estilizados -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- AOS.js CSS: Biblioteca para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- FontAwesome CSS: Biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <!-- Se incluye la hoja de estilos para el modo oscuro -->
+
+</head>
+
+<body>
+    <!-- Inicio del cuerpo del documento, donde se mostrará el contenido visible -->
+
+    <!-- Preloader: se muestra mientras se carga el contenido de la página -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <!-- Spinner animado que indica que la página se está cargando -->
+    </div>
+    
+    <!-- Contenedor para la barra de navegación -->
+    <div id="nav-container"></div>
+    <!-- El contenido del navbar se insertará dinámicamente mediante JavaScript (ej. navbar.js) -->
+
+    <!-- Sección principal: Presentación "Sobre Mí" -->
+    <main class="container mt-5">
+        <!-- "container": limita el ancho del contenido; "mt-5": margen superior para separar del navbar -->
+
+        <div class="row align-items-center">
+            <!-- Fila de Bootstrap para alinear elementos verticalmente al centro -->
+
+            <!-- Columna para la imagen de perfil -->
+            <div class="col-lg-5 text-center" data-aos="fade-right">
+                <!-- "col-lg-5": ocupa 5/12 del ancho en pantallas grandes; "text-center": centra el contenido;
+                     animación "fade-right" aplicada para que la imagen se muestre desplazándose desde la derecha -->
+                <img src="../assets/img/perfil.jpg" class="img-fluid rounded-circle" alt="Luis Vicente Guzmán">
+                <!-- Imagen de perfil: "img-fluid" para adaptarse al contenedor; "rounded-circle" para que sea circular -->
+            </div>
+            
+            <!-- Columna para la descripción personal -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <!-- "col-lg-7": ocupa el 7/12 del ancho en pantallas grandes; animación "fade-left" para que aparezca desde la izquierda -->
+                <h1 class="mb-3">Luis Vicente Guzmán Freire</h1>
+                <!-- Título con el nombre completo, con margen inferior para separar del párrafo siguiente -->
+                <p class="lead">
+                    Especialista en <strong>análisis geoespacial, teledetección y machine learning</strong> aplicado a la agricultura. Con más de 7 años de experiencia, he trabajado en proyectos que integran <strong>SIG, drones, programación y modelado de datos</strong> para mejorar la gestión de recursos agropecuarios y promover soluciones tecnológicas sostenibles.
+                </p>
+                <!-- Párrafo descriptivo con estilo "lead" que resalta la información personal -->
+                <a href="../assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3">
+                    <i class="fas fa-file-download"></i> Descargar CV
+                </a>
+                <!-- Botón que permite descargar el CV, con icono de descarga, estilo de botón primario y margen superior -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección de información organizada en tarjetas -->
+    <section class="container mt-5">
+        <!-- Sección <section> con margen superior para separar del contenido anterior -->
+        <h2 class="text-center" data-aos="fade-up">Mi Perfil Profesional</h2>
+        <!-- Título de la sección, centrado y con animación "fade-up" -->
+        <div class="row mt-4">
+            <!-- Fila de Bootstrap para distribuir las tarjetas de información -->
+
+            <!-- Tarjeta para Habilidades Técnicas -->
+            <div class="col-md-4" data-aos="zoom-in">
+                <!-- Columna que ocupa 1/3 del ancho en dispositivos medianos; animación "zoom-in" al aparecer -->
+                <div class="card shadow-sm p-4 text-center">
+                    <!-- Tarjeta con sombra ligera ("shadow-sm"), padding 4 y texto centrado -->
+                    <i class="fa-solid fa-code fa-3x mb-3 text-primary"></i>
+                    <!-- Icono representativo de habilidades técnicas, con tamaño 3x y color primario -->
+                    <h4>Habilidades Técnicas</h4>
+                    <!-- Título de la tarjeta -->
+                    <ul class="list-unstyled">
+                        <!-- Lista sin estilos de viñetas para enumerar habilidades -->
+                        <li>Sistemas de Información Geográfica (SIG) - QGIS, ArcGIS</li>
+                        <li>Teledetección y análisis de imágenes satelitales</li>
+                        <li>Modelos de Machine Learning para predicción agropecuaria</li>
+                        <li>Desarrollo Web y Geoportales (HTML, CSS, JavaScript, Leaflet, GeoServer)</li>
+                        <li>Programación en Python, R y JavaScript</li>
+                        <li>Procesamiento de datos espaciales con Google Earth Engine</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta para Formación Académica -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <!-- Columna con animación "zoom-in" y retraso de 100ms -->
+                <div class="card shadow-sm p-4 text-center">
+                    <i class="fa-solid fa-graduation-cap fa-3x mb-3 text-success"></i>
+                    <!-- Icono de birrete, tamaño 3x, margen inferior y color de éxito -->
+                    <h4>Formación Académica</h4>
+                    <!-- Título de la tarjeta -->
+                    <ul class="list-unstyled">
+                        <!-- Lista sin viñetas para detallar formación -->
+                        <li><strong>Máster en Ingeniería Geomática y Geoinformación</strong> - Universidad Politécnica de Valencia</li>
+                        <li><strong>Ingeniero Agrónomo</strong> - Universidad Nacional de Loja</li>
+                        <li>Especialización en <strong>Análisis Geoespacial y Modelado de Datos</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta para Certificaciones -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Columna para certificaciones, con animación "zoom-in" y retraso de 200ms -->
+                <div class="card shadow-sm p-4 text-center">
+                    <i class="fa-solid fa-certificate fa-3x mb-3 text-warning"></i>
+                    <!-- Icono de certificado, tamaño 3x, margen inferior y color de advertencia -->
+                    <h4>Certificaciones</h4>
+                    <!-- Título de la tarjeta -->
+                    <ul class="list-unstyled">
+                        <!-- Lista sin estilos para enumerar certificaciones -->
+                        <li>Agricultura de Precisión con Python - Geomática Ambiental</li>
+                        <li>Geospatial Data Analysis with ChatGPT & Google Earth Engine - United Nations University</li>
+                        <li>Especialista en Geoportales con Pentaho, GeoServer, QGIS & Leaflet - NextCollege</li>
+                        <li>Control de Calidad de Cartografía Base con Fines Catastrales - Instituto Geográfico Militar</li>
+                        <li>Power BI Aplicado al Sector Agroalimentario - Andalucía Agrotech</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <div id="footer-container"></div>
+    <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (ej. footer.js) -->
+
+    <!-- ============================ -->
+    <!-- Inclusión de scripts externos y personalizados -->
+    <!-- ============================ -->
+
+    <!-- Bootstrap Bundle (incluye Popper) para funcionalidades interactivas de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS.js para activar animaciones al hacer scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Scripts personalizados: carga dinámica del navbar, footer y funcionalidades adicionales -->
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        AOS.init();
+        // Inicializa AOS para activar las animaciones definidas mediante los atributos data-aos
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Elemento <nav> que define la barra de navegación, con clases de Bootstrap:
+         - navbar: estilo base de navbar.
+         - navbar-expand-lg: la navbar se expande (muestra enlaces horizontalmente) en pantallas grandes.
+         - navbar-dark: utiliza colores oscuros para el texto y los elementos.
+         - bg-dark: asigna un fondo oscuro a la navbar. -->
+
+    <div class="container">
+        <!-- Contenedor para limitar el ancho del contenido y centrarlo dentro de la navbar -->
+
+        <!-- Logo o Nombre del Portafolio -->
+        <a class="navbar-brand" href="/index.html">Mi Portafolio</a>
+        <!-- Enlace con clase navbar-brand que muestra el nombre o logo del portafolio;
+             redirige a la página de inicio (/index.html) -->
+
+        <!-- Botón de menú para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú de navegación">
+            <!-- Botón que se muestra en dispositivos móviles para desplegar u ocultar el menú.
+                 - navbar-toggler: estilo base del botón de menú.
+                 - type="button": especifica que es un botón.
+                 - data-bs-toggle="collapse": indica que al hacer clic se colapsará o expandirá el contenido.
+                 - data-bs-target="#navbarNav": ID del elemento que se va a colapsar/expandir.
+                 - aria-controls, aria-expanded, aria-label: atributos de accesibilidad para describir la funcionalidad del botón. -->
+            <span class="navbar-toggler-icon"></span>
+            <!-- Icono del botón, generado por Bootstrap -->
+        </button>
+
+        <!-- Contenedor de enlaces -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Elemento que contiene los enlaces del menú; se colapsa en pantallas pequeñas.
+                 - collapse y navbar-collapse: clases de Bootstrap para el comportamiento colapsable.
+                 - id="navbarNav": identificador usado por el botón para controlar este contenedor. -->
+
+            <ul class="navbar-nav ms-auto">
+                <!-- Lista de navegación con:
+                     - navbar-nav: estilo base para la lista de enlaces.
+                     - ms-auto: margen izquierdo automático, empuja los elementos hacia la derecha. -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Inicio</a>
+                </li>
+                <!-- Elemento de lista que contiene un enlace con:
+                     - nav-item: estilo del elemento de navegación.
+                     - nav-link: estilo del enlace dentro de la navbar.
+                     - href="/index.html": redirige a la página de inicio. -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/about.html">Sobre Mí</a>
+                </li>
+                <!-- Elemento de lista para la página "Sobre Mí" -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/services.html">Servicios</a>
+                </li>
+                <!-- Elemento de lista para la página de "Servicios" -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/projects.html">Proyectos</a>
+                </li>
+                <!-- Elemento de lista para la página de "Proyectos" -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/blog.html">Blog</a>
+                </li>
+                <!-- Elemento de lista para la página del "Blog" -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/contact.html">Contacto</a>
+                </li>
+                <!-- Elemento de lista para la página de "Contacto" -->
+            </ul>
+        </div>
+    </div>
+</nav>
