@@ -50,6 +50,17 @@
         <!-- Spinner animado para indicar que se está cargando la página -->
     </div>
 
+    <div id="navbar-container"></div>
+    <script>
+        fetch("components/navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+            })
+            .catch(error => console.log("Error cargando el navbar:", error));
+    </script>
+
+
     <!-- Contenedor para la barra de navegación -->
     <div id="nav-container"></div>
     <!-- El contenido del navbar se cargará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
@@ -189,6 +200,18 @@
             </div>
         </div>
     </section>
+
+    <div id="footer-container"></div>
+    <script>
+        fetch("components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch(error => console.log("Error cargando el footer:", error));
+    </script>
+    
+
 
     <!-- Pie de página -->
     <div id="footer-container"></div>
