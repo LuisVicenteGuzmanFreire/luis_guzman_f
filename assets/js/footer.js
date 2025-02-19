@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
     let depth = window.location.pathname.split("/").length - 2;
     let pathPrefix = depth > 0 ? "../".repeat(depth) : "";
-    let pathFooter = pathPrefix + "components/footer.html";
+    let pathFooter = pathPrefix + "luis_guzman_f/components/footer.html";
+
 
     console.log("📌 Intentando cargar footer desde:", pathFooter);
 

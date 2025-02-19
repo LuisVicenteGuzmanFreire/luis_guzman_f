@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
     let depth = window.location.pathname.split("/").length - 2;
     let pathPrefix = depth > 0 ? "../".repeat(depth) : "";
-    let pathNavbar = pathPrefix + "components/navbar.html";
+    let pathNavbar = pathPrefix + "luis_guzman_f/components/navbar.html";
 
     console.log("📌 Intentando cargar navbar desde:", pathNavbar);
 
