@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Hojas de estilo personalizadas para el sitio -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="luis_guzman_f/assets/css/styles.css">
+    <link rel="stylesheet" href="luis_guzman_f/assets/css/dark-mode.css">
     <!-- Se incluye el archivo de estilos para el modo oscuro -->
     
 </head>
@@ -58,7 +58,7 @@
     <!-- El contenido del navbar se cargará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
 
     <!-- Banner Principal -->
-    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('assets/img/banner.webp') no-repeat center center/cover; height: 90vh;">
+    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('luis_guzman_f/assets/img/banner.webp') no-repeat center center/cover; height: 90vh;">
         <!-- Elemento header que actúa como banner principal con fondo de imagen -->
         <!-- Se utilizan clases de Bootstrap y utilidades para centrar el contenido vertical y horizontalmente -->
         <!-- El estilo en línea define el fondo (imagen, posición y cobertura) y la altura (90% de la ventana) -->
@@ -76,12 +76,12 @@
             </p>
             <!-- Párrafo descriptivo con estilo "lead" para resaltar el texto; animación con un retraso de 100ms -->
 
-            <a href="pages/about.html" class="btn btn-primary btn-lg m-2" data-aos="fade-up" data-aos-delay="200">
+            <a href="luis_guzman_f/pages/about.html" class="btn btn-primary btn-lg m-2" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-user"></i> Conóceme
             </a>
             <!-- Botón que redirige a la página "Sobre Mí", con icono de usuario, estilos de Bootstrap y animación con 200ms de retraso -->
 
-            <a href="pages/projects.html" class="btn btn-outline-light btn-lg m-2" data-aos="fade-up" data-aos-delay="300">
+            <a href="luis_guzman_f/pages/projects.html" class="btn btn-outline-light btn-lg m-2" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-laptop-code"></i> Mis Proyectos
             </a>
             <!-- Botón que redirige a la página de proyectos, con icono de código, estilo de botón delineado y animación con 300ms de retraso -->
@@ -101,7 +101,7 @@
         </p>
         <!-- Párrafo descriptivo con estilo "lead" para resaltar la información y animación con 100ms de retraso -->
 
-        <a href="assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200">
+        <a href="luis_guzman_f/assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200">
             <i class="fas fa-file-download"></i> Descargar CV
         </a>
         <!-- Botón para descargar el currículum, con icono de descarga, margen superior y animación con 200ms de retraso -->
@@ -144,7 +144,7 @@
 
         <div class="text-center mt-4">
             <!-- Contenedor para el botón de "Ver todos los servicios", centrado y con margen superior -->
-            <a href="pages/services.html" class="btn btn-primary" data-aos="fade-up">
+            <a href="luis_guzman_f/pages/services.html" class="btn btn-primary" data-aos="fade-up">
                 <i class="fas fa-list"></i> Ver todos los servicios
             </a>
             <!-- Botón que redirige a la página de servicios, con icono de lista y animación de aparición -->
@@ -165,7 +165,7 @@
                 <!-- Primera columna para el primer proyecto, con animación de aparición -->
                 <div class="card">
                     <!-- Componente de tarjeta de Bootstrap -->
-                    <img src="assets/img/project1.webp" class="card-img-top" alt="Proyecto 1">
+                    <img src="luis_guzman_f/assets/img/project1.webp" class="card-img-top" alt="Proyecto 1">
                     <!-- Imagen del proyecto, ubicada en la parte superior de la tarjeta -->
                     <div class="card-body">
                         <!-- Cuerpo de la tarjeta -->
@@ -173,7 +173,7 @@
                         <!-- Título del proyecto -->
                         <p class="card-text">Uso de sensores multiespectrales para optimización agrícola.</p>
                         <!-- Descripción breve del proyecto -->
-                        <a href="pages/projects.html" class="btn btn-primary">Ver más</a>
+                        <a href="luis_guzman_f/pages/projects.html" class="btn btn-primary">Ver más</a>
                         <!-- Botón para ver más detalles, redirige a la página de proyectos -->
                     </div>
                 </div>
@@ -182,11 +182,11 @@
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <!-- Segunda columna para el segundo proyecto, con animación y retraso de 100ms -->
                 <div class="card">
-                    <img src="assets/img/project2.webp" class="card-img-top" alt="Proyecto 2">
+                    <img src="luis_guzman_f/assets/img/project2.webp" class="card-img-top" alt="Proyecto 2">
                     <div class="card-body">
                         <h5 class="card-title">Geoportal para Agricultura de Precisión</h5>
                         <p class="card-text">Desarrollo de plataformas interactivas para visualización de datos.</p>
-                        <a href="pages/projects.html" class="btn btn-primary">Ver más</a>
+                        <a href="luis_guzman_f/pages/projects.html" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
 
     <div id="footer-container"></div>
     <script>
-        fetch("components/footer.html")
+        fetch("luis_guzman_f/components/footer.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("footer-container").innerHTML = data;
@@ -220,9 +220,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- Scripts personalizados para cargar el navbar, footer y funcionalidades adicionales -->
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/footer.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="luis_guzman_f/assets/js/navbar.js"></script>
+    <script src="luis_guzman_f/assets/js/footer.js"></script>
+    <script src="luis_guzman_f/assets/js/main.js"></script>
 
     <script>
         AOS.init(); // Inicializa AOS para activar las animaciones definidas con los atributos data-aos
