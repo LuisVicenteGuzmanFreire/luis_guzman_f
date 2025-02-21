@@ -38,4 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // =========================
+    // SOLUCIÓN AL PROBLEMA DE DOBLE "PAGES/"
+    // =========================
+    let navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Evita la doble carga del enlace
+
+            let targetHref = this.getAttribute("href");
+
+        // Prevenir que se agregue "pages/" múltiples veces
+        if (window.location.pathname.includes("/pages/") && targetHref.startsWith("pages/")) {
+            targetHref = targetHref.replace(/^pages\//, "");
+        }
+
+
+            window.location.href = targetHref;
+        });
+    });
+
 });
