@@ -43,3 +43,8 @@ function handleProjectFilter(event) {
         }
     });
 }
+
+// Export for testing in Node environments
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { handleProjectFilter, initProjectFilters };
+}
