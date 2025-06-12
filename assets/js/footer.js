@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
-    let depth = window.location.pathname.split("/").length - 2;
+    let depth = window.location.pathname.split("/").length - 3;
+    if (depth < 0) depth = 0;
     let pathPrefix = depth > 0 ? "../".repeat(depth) : "";
     let pathFooter = pathPrefix + "luis_guzman_f/components/footer.html";
 

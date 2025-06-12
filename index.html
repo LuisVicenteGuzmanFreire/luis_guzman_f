@@ -199,18 +199,6 @@
         </div>
     </section>
 
-    <div id="footer-container"></div>
-    <script>
-        fetch("components/footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer-container").innerHTML = data;
-            })
-            .catch(error => console.log("Error cargando el footer:", error));
-    </script>
-    
-
-
     <!-- Pie de página -->
     <div id="footer-container"></div>
     <!-- El contenido del footer se cargará dinámicamente mediante JavaScript (por ejemplo, desde footer.js) -->
