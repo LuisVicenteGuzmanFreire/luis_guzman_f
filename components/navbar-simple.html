@@ -1,0 +1,212 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-navbar">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#" id="brand-link">
+            <i class="fas fa-map-marked-alt me-2"></i>
+            <strong>Luis Vicente Guzmán</strong>
+        </a>
+
+        <!-- Botón móvil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="index">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="about">
+                        <i class="fas fa-user"></i> Sobre Mí
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="services">
+                        <i class="fas fa-cogs"></i> Servicios
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="projects">
+                        <i class="fas fa-laptop-code"></i> Proyectos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="blog">
+                        <i class="fas fa-blog"></i> Blog
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="contact">
+                        <i class="fas fa-envelope"></i> Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Estilos para navbar fija */
+#main-navbar {
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    min-height: 70px;
+}
+
+/* Logo */
+.navbar-brand {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.navbar-brand:hover {
+    color: #ffb703 !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand i {
+    color: #ffb703;
+    font-size: 1.6rem;
+}
+
+/* Navegación principal */
+.navbar-nav {
+    gap: 0.5rem;
+}
+
+.nav-item {
+    margin: 0 0.2rem;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500 !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 183, 3, 0.2) !important;
+    color: #ffb703 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 183, 3, 0.3);
+}
+
+.nav-link.active {
+    background-color: #ffb703 !important;
+    color: #2d6a4f !important;
+    font-weight: 600 !important;
+}
+
+.nav-link.active:hover {
+    background-color: #faa307 !important;
+    color: #2d6a4f !important;
+}
+
+.nav-link i {
+    font-size: 1rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .navbar-nav {
+        background: rgba(45, 106, 79, 0.95);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        margin: 0.2rem 0 !important;
+        justify-content: flex-start !important;
+    }
+}
+
+/* Ajuste para contenido debajo de navbar fija */
+body {
+    padding-top: 90px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setupNavigation();
+    highlightCurrentPage();
+});
+
+function setupNavigation() {
+    // Configurar enlace del logo
+    const brandLink = document.getElementById('brand-link');
+    const currentPath = window.location.pathname;
+    const isInPages = currentPath.includes('/pages/');
+    
+    if (isInPages) {
+        brandLink.href = '../index.html';
+    } else {
+        brandLink.href = './index.html';
+    }
+    
+    // Configurar enlaces de navegación
+    const navLinks = document.querySelectorAll('.nav-link[data-target]');
+    
+    navLinks.forEach(link => {
+        const target = link.getAttribute('data-target');
+        
+        // Configurar href correctamente
+        if (target === 'index') {
+            if (isInPages) {
+                link.href = '../index.html';
+            } else {
+                link.href = './index.html';
+            }
+        } else {
+            if (isInPages) {
+                link.href = `./${target}.html`;
+            } else {
+                link.href = `./pages/${target}.html`;
+            }
+        }
+        
+        // Agregar event listener para debug
+        link.addEventListener('click', function(e) {
+            console.log(`Navegando a: ${this.href}`);
+            // Permitir navegación normal
+        });
+    });
+}
+
+function highlightCurrentPage() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop().replace('.html', '') || 'index';
+    
+    // Limpiar estados activos
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Marcar página actual
+    const activeLink = document.querySelector(`[data-target="${currentPage}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+    
+    console.log(`Página actual: ${currentPage}`);
+}
+</script>

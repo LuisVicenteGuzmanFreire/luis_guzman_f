@@ -16,10 +16,10 @@
     <meta name="robots" content="index, follow">
     <!-- Indica a los motores de búsqueda que esta página debe ser indexada y que sigan los enlaces -->
 
-    <title>Contacto</title>
-    <!-- Título de la página que se mostrará en la pestaña del navegador -->
+    <title>Contacto - Luis Vicente Guzmán | Consultas en Geomática y SIG</title>
+    <!-- Título optimizado para SEO con palabras clave relevantes -->
 
-    <meta name="description" content="Ponte en contacto para consultas sobre geomática, SIG y proyectos de análisis espacial.">
+    <meta name="description" content="Contáctame para consultas profesionales en geomática, SIG, teledetección y machine learning aplicado a la agricultura. Más de 7 años de experiencia en análisis geoespacial.">
 
     <meta name="keywords" content="Contacto, Geomática, SIG, Análisis Espacial, Cartografía, Consultoría GIS, Teledetección">
 
@@ -81,24 +81,28 @@
                     <h4 class="mb-3">Luis Vicente Guzmán</h4>
                     
                     <div class="contact-item">
-                        <i class="fa-solid fa-phone fa-lg text-success"></i>
-                        <a href="tel:+123456789" class="contact-link">+593 968189168</a>
-                        <a href="tel:+123456789" class="contact-link">+593 967252839</a>
+                        <i class="fa-solid fa-phone fa-lg text-success" aria-hidden="true"></i>
+                        <span class="visually-hidden">Teléfonos:</span>
+                        <a href="tel:+593968189168" class="contact-link" aria-label="Llamar al +593 968189168">+593 968189168</a>
+                        <a href="tel:+593967252839" class="contact-link" aria-label="Llamar al +593 967252839">+593 967252839</a>
                     </div>
 
                     <div class="contact-item">
-                        <i class="fa-solid fa-envelope fa-lg text-danger"></i>
-                        <a href="mailto:correo@example.com" class="contact-link">luisvicente1988@hotmail.com</a>
+                        <i class="fa-solid fa-envelope fa-lg text-danger" aria-hidden="true"></i>
+                        <span class="visually-hidden">Correo electrónico:</span>
+                        <a href="mailto:luisvicente1988@hotmail.com" class="contact-link" aria-label="Enviar correo a luisvicente1988@hotmail.com">luisvicente1988@hotmail.com</a>
                     </div>
 
                     <div class="contact-item">
-                        <i class="fa-brands fa-whatsapp fa-lg text-success"></i>
-                        <a href="https://wa.me/+593 968189168" target="_blank" class="contact-link">WhatsApp</a>
+                        <i class="fa-brands fa-whatsapp fa-lg text-success" aria-hidden="true"></i>
+                        <span class="visually-hidden">WhatsApp:</span>
+                        <a href="https://wa.me/593968189168" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Enviar mensaje por WhatsApp">WhatsApp</a>
                     </div>
 
                     <div class="contact-item">
-                        <i class="fa-solid fa-map-marker-alt fa-lg text-warning"></i>
-                        <p class="contact-link">Ubicación: Quito, Ecuador</p>
+                        <i class="fa-solid fa-map-marker-alt fa-lg text-warning" aria-hidden="true"></i>
+                        <span class="visually-hidden">Ubicación:</span>
+                        <p class="contact-link">Quito, Ecuador</p>
                     </div>
                 </div>
             </div>
@@ -108,31 +112,34 @@
                 <div class="card shadow-lg p-4 w-100">
                     <h2 class="text-center mb-3">Envíame un mensaje</h2>
                     <!-- Formulario de Contacto -->
-                    <form id="contact-form" class="contact-form needs-validation" novalidate>
+                    <form id="contact-form" class="contact-form needs-validation" novalidate role="form" aria-labelledby="form-title">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" required>
-                            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                            <label for="name" class="form-label">Nombre *</label>
+                            <input type="text" class="form-control" id="name" name="name" required aria-required="true" aria-describedby="name-error">
+                            <div id="name-error" class="invalid-feedback" role="alert">Por favor, ingresa tu nombre completo.</div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+                            <label for="email" class="form-label">Correo Electrónico *</label>
+                            <input type="email" class="form-control" id="email" name="email" required aria-required="true" aria-describedby="email-error">
+                            <div id="email-error" class="invalid-feedback" role="alert">Por favor, ingresa un correo electrónico válido.</div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" rows="4" required></textarea>
-                            <div class="invalid-feedback">Por favor, escribe un mensaje.</div>
+                            <label for="message" class="form-label">Mensaje *</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-error" placeholder="Describe tu consulta o proyecto en geomática, SIG o agricultura de precisión..."></textarea>
+                            <div id="message-error" class="invalid-feedback" role="alert">Por favor, escribe tu mensaje (mínimo 10 caracteres).</div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary" aria-describedby="form-help">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje
+                        </button>
+                        <div id="form-help" class="form-text mt-2">* Campos obligatorios. Responderé en un plazo máximo de 24 horas.</div>
                     </form>
 
                     <!-- Mensaje de éxito -->
-                    <div id="success-message" class="alert alert-success mt-3" style="display: none;">
-                        ✅ ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+                    <div id="success-message" class="alert alert-success mt-3" style="display: none;" role="alert" aria-live="polite">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
                     </div>
 
                 </div>
@@ -140,11 +147,6 @@
         </div>
         <!-- "container": limita el ancho y centra el contenido; "text-center": centra el texto; "mt-5": margen superior -->
 
-        <!-- Mensaje de confirmación, inicialmente oculto -->
-        <div id="success-message" class="alert alert-success mt-3" style="display: none;">
-            ✅ ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
-        </div>
-        <!-- Al enviarse correctamente el formulario, este mensaje se mostrará para confirmar el envío -->
 
         <!-- Sección del Mapa Interactivo -->
         <section class="container mt-5">
@@ -183,7 +185,7 @@
     <script src="../assets/js/map.js"></script>
    
     <!-- Script para cargar dinámicamente la barra de navegación -->
-    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/navbar-fixed.js"></script>
 
     <!-- Script para cargar dinámicamente el pie de página -->
     <script src="../assets/js/footer.js"></script>

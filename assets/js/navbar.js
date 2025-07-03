@@ -10,9 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
-    let depth = window.location.pathname.split("/").length - 2;
-    let pathPrefix = depth > 0 ? "../".repeat(depth) : "";
-    let pathNavbar = pathPrefix + "luis_guzman_f/components/navbar.html";
+    let currentPath = window.location.pathname;
+    let pathNavbar;
+    
+    if (currentPath.includes('/pages/')) {
+        // Si estamos en una página dentro de /pages/
+        pathNavbar = "../components/navbar-final.html";
+    } else {
+        // Si estamos en la raíz
+        pathNavbar = "components/navbar-final.html";
+    }
 
     console.log("📌 Intentando cargar navbar desde:", pathNavbar);
 

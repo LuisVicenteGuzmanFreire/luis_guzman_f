@@ -19,15 +19,80 @@
     <title>Luis Vicente Guzmán | Geomática, SIG y Agricultura de Precisión</title>
     <!-- Establece el título que se mostrará en la pestaña del navegador -->
 
-    <meta name="description" content="Especialista en geomática, SIG y machine learning aplicado a la agricultura.">
-    <!-- Proporciona una descripción breve del contenido de la página para SEO -->
+    <meta name="description" content="Luis Vicente Guzmán, especialista en geomática, SIG y machine learning aplicado a la agricultura con +7 años de experiencia en Ecuador. Servicios de cartografía, teledetección y agricultura de precisión.">
+    <!-- Descripción optimizada para SEO con información específica -->
 
     <meta name="keywords" content="Geomática, SIG, Machine Learning, Agricultura, Cartografía, Análisis Geoespacial, Mapas, Fotogrametría, GNSS, Teledetección">
+    
+    <!-- Open Graph Meta Tags para redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luis Vicente Guzmán | Geomática, SIG y Agricultura de Precisión">
+    <meta property="og:description" content="Especialista en geomática y SIG con +7 años de experiencia. Servicios profesionales en teledetección, machine learning y agricultura de precisión en Ecuador.">
+    <meta property="og:url" content="https://luisvicente1988.github.io/luis_guzman_f/">
+    <meta property="og:site_name" content="Luis Vicente Guzmán - Geomática y SIG">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luis Vicente Guzmán | Geomática, SIG y Agricultura de Precisión">
+    <meta name="twitter:description" content="Especialista en geomática y SIG con +7 años de experiencia en agricultura de precisión y teledetección.">
+    
+    <!-- Schema.org JSON-LD para datos estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luis Vicente Guzmán Freire",
+      "jobTitle": "Especialista en Geomática y SIG",
+      "description": "Especialista en análisis geoespacial, teledetección y machine learning aplicado a la agricultura con más de 7 años de experiencia",
+      "url": "https://luisvicente1988.github.io/luis_guzman_f/",
+      "email": "luisvicente1988@hotmail.com",
+      "telephone": "+593968189168",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Quito",
+        "addressCountry": "Ecuador"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Politécnica de Valencia",
+          "description": "Máster en Ingeniería Geomática y Geoinformación"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Nacional de Loja",
+          "description": "Ingeniero Agrónomo"
+        }
+      ],
+      "knowsAbout": [
+        "Sistemas de Información Geográfica (SIG)",
+        "Teledetección",
+        "Machine Learning",
+        "Agricultura de Precisión",
+        "Análisis Geoespacial",
+        "QGIS",
+        "ArcGIS",
+        "Google Earth Engine",
+        "Python",
+        "Cartografía"
+      ],
+      "sameAs": [
+        "https://wa.me/593968189168"
+      ]
+    }
+    </script>
 
     <!-- ==================== -->
     <!-- Incluir hojas de estilo externas -->
     <!-- ==================== -->
     <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2d6a4f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="LVGuzman">
+    <link rel="apple-touch-icon" href="assets/img/icon-192x192.png">
 
     <!-- Bootstrap: Framework CSS para diseño responsivo y componentes predefinidos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -44,7 +109,8 @@
     <!-- Hojas de estilo personalizadas para el sitio -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
-    <!-- Se incluye el archivo de estilos para el modo oscuro -->
+    <link rel="stylesheet" href="assets/css/lazy-loading.css">
+    <!-- Se incluye el archivo de estilos para el modo oscuro y lazy loading -->
     
 </head>
 
@@ -64,7 +130,7 @@
     <!-- El contenido del navbar se cargará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
 
     <!-- Banner Principal -->
-    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('assets/img/banner.webp') no-repeat center center/cover; height: 90vh;">
+    <header class="hero text-black text-center d-flex align-items-center justify-content-center" style="background: url('assets/img/banner.webp') no-repeat center center/cover; height: 90vh;" role="banner" aria-label="Sección principal de presentación">
         <!-- Elemento header que actúa como banner principal con fondo de imagen -->
         <!-- Se utilizan clases de Bootstrap y utilidades para centrar el contenido vertical y horizontalmente -->
         <!-- El estilo en línea define el fondo (imagen, posición y cobertura) y la altura (90% de la ventana) -->
@@ -82,13 +148,13 @@
             </p>
             <!-- Párrafo descriptivo con estilo "lead" para resaltar el texto; animación con un retraso de 100ms -->
 
-            <a href="pages/about.html" class="btn btn-primary btn-lg m-2" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-user"></i> Conóceme
+            <a href="pages/about.html" class="btn btn-primary btn-lg m-2" data-aos="fade-up" data-aos-delay="200" aria-label="Ir a la página sobre mí para conocer más información profesional">
+                <i class="fas fa-user" aria-hidden="true"></i> Conóceme
             </a>
             <!-- Botón que redirige a la página "Sobre Mí", con icono de usuario, estilos de Bootstrap y animación con 200ms de retraso -->
 
-            <a href="pages/projects.html" class="btn btn-outline-light btn-lg m-2" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-laptop-code"></i> Mis Proyectos
+            <a href="pages/projects.html" class="btn btn-outline-light btn-lg m-2" data-aos="fade-up" data-aos-delay="300" aria-label="Ver portafolio de proyectos en geomática y SIG">
+                <i class="fas fa-laptop-code" aria-hidden="true"></i> Mis Proyectos
             </a>
             <!-- Botón que redirige a la página de proyectos, con icono de código, estilo de botón delineado y animación con 300ms de retraso -->
         </div>
@@ -107,51 +173,51 @@
         </p>
         <!-- Párrafo descriptivo con estilo "lead" para resaltar la información y animación con 100ms de retraso -->
 
-        <a href="assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-file-download"></i> Descargar CV
+        <a href="assets/docs/CV_LUIS_GUZMAN.pdf" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200" download="CV_Luis_Vicente_Guzman_Geomatic_Specialist.pdf" aria-label="Descargar currículum vitae en formato PDF">
+            <i class="fas fa-file-download" aria-hidden="true"></i> Descargar CV
         </a>
         <!-- Botón para descargar el currículum, con icono de descarga, margen superior y animación con 200ms de retraso -->
     </section>
 
     <!-- Sección de Servicios -->
-    <section class="container mt-5">
+    <section class="container mt-5" aria-labelledby="servicios-heading">
         <!-- Sección que muestra los servicios ofrecidos, con margen superior y contenido centrado -->
         
-        <h2 class="text-center" data-aos="fade-up">Servicios</h2>
+        <h2 id="servicios-heading" class="text-center" data-aos="fade-up">Servicios</h2>
         <!-- Título de la sección con animación -->
 
         <div class="row text-center mt-4">
             <!-- Fila de Bootstrap para distribuir tres columnas de servicios, centradas y con margen superior -->
             
-            <div class="col-md-4" data-aos="zoom-in">
+            <div class="col-md-4" data-aos="zoom-in" role="article" aria-labelledby="servicio-sig">
                 <!-- Primera columna para el servicio de SIG y Cartografía con animación de zoom-in -->
-                <i class="fas fa-map-marked-alt fa-3x mb-2"></i>
+                <i class="fas fa-map-marked-alt fa-3x mb-2" aria-hidden="true"></i>
                 <!-- Icono representativo del servicio, tamaño 3x y margen inferior -->
-                <h5>SIG y Cartografía</h5>
+                <h5 id="servicio-sig">SIG y Cartografía</h5>
                 <p>Generación de mapas y análisis geoespacial con QGIS, ArcGIS y PostGIS.</p>
             </div>
 
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100" role="article" aria-labelledby="servicio-teledeteccion">
                 <!-- Segunda columna para el servicio de Teledetección con animación de zoom-in y retraso de 100ms -->
-                <i class="fas fa-satellite fa-3x mb-2"></i>
+                <i class="fas fa-satellite fa-3x mb-2" aria-hidden="true"></i>
                 <!-- Icono de satélite -->
-                <h5>Teledetección</h5>
+                <h5 id="servicio-teledeteccion">Teledetección</h5>
                 <p>Procesamiento de imágenes satelitales con Google Earth Engine y Pix4D.</p>
             </div>
 
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200" role="article" aria-labelledby="servicio-ml">
                 <!-- Tercera columna para el servicio de Machine Learning con animación de zoom-in y retraso de 200ms -->
-                <i class="fas fa-brain fa-3x mb-2"></i>
+                <i class="fas fa-brain fa-3x mb-2" aria-hidden="true"></i>
                 <!-- Icono de cerebro -->
-                <h5>Machine Learning</h5>
+                <h5 id="servicio-ml">Machine Learning</h5>
                 <p>Modelos predictivos aplicados a la agricultura con Python y TensorFlow.</p>
             </div>
         </div>
 
         <div class="text-center mt-4">
             <!-- Contenedor para el botón de "Ver todos los servicios", centrado y con margen superior -->
-            <a href="pages/services.html" class="btn btn-primary" data-aos="fade-up">
-                <i class="fas fa-list"></i> Ver todos los servicios
+            <a href="pages/services.html" class="btn btn-primary" data-aos="fade-up" aria-label="Ver información detallada de todos los servicios profesionales">
+                <i class="fas fa-list" aria-hidden="true"></i> Ver todos los servicios
             </a>
             <!-- Botón que redirige a la página de servicios, con icono de lista y animación de aparición -->
         </div>
@@ -171,7 +237,7 @@
                 <!-- Primera columna para el primer proyecto, con animación de aparición -->
                 <div class="card">
                     <!-- Componente de tarjeta de Bootstrap -->
-                    <img src="assets/img/project1.webp" class="card-img-top" alt="Proyecto 1">
+                    <img data-src="assets/img/project1.webp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='100%25' height='100%25' fill='%23f8f9fa'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ECargando...%3C/text%3E%3C/svg%3E" class="card-img-top lazy" alt="Monitoreo de cultivos con drones - Proyecto de agricultura de precisión con sensores multiespectrales">
                     <!-- Imagen del proyecto, ubicada en la parte superior de la tarjeta -->
                     <div class="card-body">
                         <!-- Cuerpo de la tarjeta -->
@@ -188,7 +254,7 @@
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <!-- Segunda columna para el segundo proyecto, con animación y retraso de 100ms -->
                 <div class="card">
-                    <img src="assets/img/project2.webp" class="card-img-top" alt="Proyecto 2">
+                    <img data-src="assets/img/project2.webp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='100%25' height='100%25' fill='%23f8f9fa'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ECargando...%3C/text%3E%3C/svg%3E" class="card-img-top lazy" alt="Geoportal para agricultura de precisión - Plataforma interactiva de visualización de datos geoespaciales">
                     <div class="card-body">
                         <h5 class="card-title">Geoportal para Agricultura de Precisión</h5>
                         <p class="card-text">Desarrollo de plataformas interactivas para visualización de datos.</p>
@@ -226,7 +292,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- Scripts personalizados para cargar el navbar, footer y funcionalidades adicionales -->
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/navbar-fixed.js"></script>
     <script src="assets/js/footer.js"></script>
     <script src="assets/js/main.js"></script>
 

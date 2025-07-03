@@ -10,9 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
-    let depth = window.location.pathname.split("/").length - 2;
-    let pathPrefix = depth > 0 ? "../".repeat(depth) : "";
-    let pathFooter = pathPrefix + "luis_guzman_f/components/footer.html";
+    let currentPath = window.location.pathname;
+    let pathFooter;
+    
+    if (currentPath.includes('/pages/')) {
+        // Si estamos en una página dentro de /pages/
+        pathFooter = "../components/footer-dynamic.html";
+    } else {
+        // Si estamos en la raíz
+        pathFooter = "components/footer-dynamic.html";
+    }
 
 
     console.log("📌 Intentando cargar footer desde:", pathFooter);

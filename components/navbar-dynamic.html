@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color, #2d6a4f);">
+    <div class="container">
+        <!-- Logo o Nombre del Portafolio -->
+        <a class="navbar-brand" href="#" id="nav-home-link">
+            <strong>Luis Vicente Guzmán</strong>
+        </a>
+
+        <!-- Botón de menú para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Menú de navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenedor de enlaces -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="index">
+                        <i class="fas fa-home" aria-hidden="true"></i> Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="about">
+                        <i class="fas fa-user" aria-hidden="true"></i> Sobre Mí
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="services">
+                        <i class="fas fa-cogs" aria-hidden="true"></i> Servicios
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="projects">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i> Proyectos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="blog">
+                        <i class="fas fa-blog" aria-hidden="true"></i> Blog
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Configurar URLs dinámicamente basado en la ubicación actual
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const isInPagesFolder = currentPath.includes('/pages/');
+    
+    // Configurar el enlace del logo/home
+    const homeLink = document.getElementById('nav-home-link');
+    if (isInPagesFolder) {
+        homeLink.href = '../index.html';
+    } else {
+        homeLink.href = 'index.html';
+    }
+    
+    // Configurar todos los enlaces de navegación
+    const navLinks = document.querySelectorAll('[data-page]');
+    navLinks.forEach(link => {
+        const page = link.getAttribute('data-page');
+        
+        if (page === 'index') {
+            if (isInPagesFolder) {
+                link.href = '../index.html';
+            } else {
+                link.href = 'index.html';
+            }
+        } else {
+            if (isInPagesFolder) {
+                link.href = `${page}.html`;
+            } else {
+                link.href = `pages/${page}.html`;
+            }
+        }
+    });
+    
+    // Destacar la página activa
+    highlightActivePage();
+});
+
+function highlightActivePage() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop().replace('.html', '') || 'index';
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index') ||
+            (currentPage === 'index' && linkPage === 'index')) {
+            link.classList.add('active-nav');
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.classList.remove('active-nav');
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+</script>

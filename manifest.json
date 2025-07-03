@@ -1,0 +1,81 @@
+{
+  "name": "Luis Vicente Guzmán - Geomática & SIG",
+  "short_name": "LVGuzman",
+  "description": "Portafolio profesional de Luis Vicente Guzmán, especialista en geomática, SIG y machine learning aplicado a la agricultura",
+  "start_url": "/luis_guzman_f/",
+  "display": "standalone",
+  "background_color": "#f4f7f6",
+  "theme_color": "#2d6a4f",
+  "orientation": "portrait-primary",
+  "scope": "/luis_guzman_f/",
+  "lang": "es",
+  "categories": ["productivity", "business", "education"],
+  "icons": [
+    {
+      "src": "assets/img/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/img/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Vista de escritorio del portafolio"
+    },
+    {
+      "src": "assets/img/screenshot-mobile.png", 
+      "sizes": "640x1136",
+      "type": "image/png", 
+      "form_factor": "narrow",
+      "label": "Vista móvil del portafolio"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Servicios",
+      "short_name": "Servicios",
+      "description": "Ver servicios de geomática y SIG",
+      "url": "/luis_guzman_f/pages/services.html",
+      "icons": [
+        {
+          "src": "assets/img/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Proyectos", 
+      "short_name": "Proyectos",
+      "description": "Explorar portafolio de proyectos",
+      "url": "/luis_guzman_f/pages/projects.html",
+      "icons": [
+        {
+          "src": "assets/img/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto", 
+      "description": "Información de contacto",
+      "url": "/luis_guzman_f/pages/contact.html",
+      "icons": [
+        {
+          "src": "assets/img/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

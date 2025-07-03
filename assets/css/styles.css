@@ -93,7 +93,7 @@ h3 {
 /* Define el fondo y el padding de la barra de navegación */
 .navbar {
     background-color: var(--primary-color);
-    padding: 15px;
+    padding: 1rem 0; /* Solo padding vertical, sin padding superior extra */
 }
 
 .navbar-brand {
@@ -105,12 +105,17 @@ h3 {
 .nav-link {
     font-size: 1.5rem;
     color: white;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    padding: 8px 16px;
+    margin: 0 4px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
 }
 
 .nav-link:hover {
     color: var(--highlight-color) !important;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    text-decoration: none;
 }
 
 /* ======================== */
@@ -237,15 +242,5 @@ main {
     transform: scale(1.05);
 }
 
-/* 🎨 Estilo para el enlace activo en la navbar en modo claro */
-.nav-link.active-nav {
-    font-weight: bold;
-    border-bottom: 2px solid var(--highlight-color, #007bff);
-    color: var(--highlight-color, #007bff) !important;
-}
-
-/* 🎨 Ajuste para modo oscuro */
-.dark-mode .nav-link.active-nav {
-    border-bottom: 2px solid #ffb703;
-    color: #ffb703 !important;
-}
+/* 🎨 Estilos mejorados para navbar moderna - Eliminados para usar estilos inline */
+/* Los estilos de navegación ahora se manejan directamente en navbar-fixed.html */

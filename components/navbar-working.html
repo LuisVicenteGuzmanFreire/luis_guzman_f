@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.15); min-height: 70px; z-index: 1000; margin: 0 !important; padding: 1rem 0 !important;">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="#" id="logo-link" style="font-size: 1.4rem; color: #fff; text-decoration: none;">
+            <i class="fas fa-map-marked-alt me-2" style="color: #ffb703; font-size: 1.5rem;"></i>
+            Luis Vicente Guzmán
+        </a>
+
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto" style="gap: 0.2rem;">
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="index" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-home" style="font-size: 0.85rem; width: 13px;"></i>
+                        Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="about" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-user" style="font-size: 0.85rem; width: 13px;"></i>
+                        Sobre Mí
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="services" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-cogs" style="font-size: 0.85rem; width: 13px;"></i>
+                        Servicios
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="projects" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-laptop-code" style="font-size: 0.85rem; width: 13px;"></i>
+                        Proyectos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="blog" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-blog" style="font-size: 0.85rem; width: 13px;"></i>
+                        Blog
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-item-btn" href="#" data-page="contact" style="color: #fff; font-weight: 500; padding: 8px 14px; border-radius: 18px; transition: all 0.3s ease; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-envelope" style="font-size: 0.85rem; width: 13px;"></i>
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Navbar hover effects */
+.nav-item-btn:hover {
+    background-color: rgba(255, 183, 3, 0.2) !important;
+    color: #ffb703 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(255, 183, 3, 0.2);
+}
+
+.nav-item-btn.active {
+    background-color: #ffb703 !important;
+    color: #2d6a4f !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 6px rgba(255, 183, 3, 0.4);
+}
+
+.navbar-brand:hover {
+    color: #ffb703 !important;
+    transform: scale(1.02);
+}
+
+/* Mobile responsive */
+@media (max-width: 991px) {
+    #navbarContent {
+        background: rgba(45, 106, 79, 0.95);
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 8px;
+    }
+    
+    .nav-item-btn {
+        margin: 2px 0 !important;
+        justify-content: flex-start !important;
+    }
+}
+
+/* Eliminar espacios innecesarios */
+nav.navbar {
+    margin: 0 !important;
+    padding: 1rem 0 !important;
+}
+
+/* Asegurar que no hay espacio arriba del navbar */
+#nav-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Eliminar cualquier espacio arriba del body */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Asegurar que no hay espacios en el preloader */
+#preloader {
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+</style>
