@@ -13,12 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathFooter;
     
-    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-        // Si estamos en una página dentro de /pages/ o /blog/
-        pathFooter = "../components/footer-dynamic.html";
+    // Detectar si estamos en GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
+    
+    if (isGitHubPages) {
+        // En GitHub Pages, usar ruta absoluta
+        pathFooter = baseUrl + '/components/footer-dynamic.html';
     } else {
-        // Si estamos en la raíz
-        pathFooter = "components/footer-dynamic.html";
+        // En local, usar ruta relativa
+        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+            pathFooter = "../components/footer-dynamic.html";
+        } else {
+            pathFooter = "components/footer-dynamic.html";
+        }
     }
 
 

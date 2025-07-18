@@ -24,9 +24,16 @@ function loadNavbar() {
     const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
     
     // Ajustar ruta del componente
-    let navbarPath = 'components/navbar-working.html';
-    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-        navbarPath = '../components/navbar-working.html';
+    let navbarPath;
+    if (isGitHubPages) {
+        // En GitHub Pages, usar ruta absoluta
+        navbarPath = baseUrl + '/components/navbar-working.html';
+    } else {
+        // En local, usar ruta relativa
+        navbarPath = 'components/navbar-working.html';
+        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+            navbarPath = '../components/navbar-working.html';
+        }
     }
     
     // Cargando navbar desde la ruta correcta
