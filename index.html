@@ -279,7 +279,7 @@
             .then(data => {
                 document.getElementById("footer-container").innerHTML = data;
             })
-            .catch(error => // console.log("Error cargando el footer:", error));
+            .catch(error => console.log("Error cargando el footer:", error));
     </script>
     
 
@@ -310,7 +310,7 @@
                 const container = document.getElementById('breadcrumb-container');
                 if (container) container.innerHTML = data;
             })
-            .catch(error => // console.log('Error cargando breadcrumbs:', error));
+            .catch(error => console.log('Error cargando breadcrumbs:', error));
         
         // Cargar testimonios
         fetch('components/testimonials.html')
@@ -319,7 +319,7 @@
                 const container = document.getElementById('testimonials-container');
                 if (container) container.innerHTML = data;
             })
-            .catch(error => // console.log('Error cargando testimonios:', error));
+            .catch(error => console.log('Error cargando testimonios:', error));
     </script>
 
     <script>
