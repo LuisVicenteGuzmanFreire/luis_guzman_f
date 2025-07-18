@@ -13,12 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathNavbar;
     
-    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-        // Si estamos en una página dentro de /pages/ o /blog/
-        pathNavbar = "../components/navbar-working.html";
+    // Detectar si estamos en GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
+    
+    if (isGitHubPages) {
+        // En GitHub Pages, usar ruta absoluta
+        pathNavbar = baseUrl + '/components/navbar-working.html';
     } else {
-        // Si estamos en la raíz
-        pathNavbar = "components/navbar-working.html";
+        // En local, usar ruta relativa
+        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+            pathNavbar = "../components/navbar-working.html";
+        } else {
+            pathNavbar = "components/navbar-working.html";
+        }
     }
 
     // console.log("📌 Intentando cargar navbar desde:", pathNavbar);
