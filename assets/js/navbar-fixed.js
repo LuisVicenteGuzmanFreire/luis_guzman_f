@@ -76,11 +76,20 @@ function setupNavigation() {
     
     const currentPath = window.location.pathname;
     const isInPages = currentPath.includes('/pages/');
+    const isInBlog = currentPath.includes('/blog/');
+    
+    // Detectar si estamos en GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
     
     // Configurar logo
     const logoLink = document.getElementById('logo-link');
     if (logoLink) {
-        logoLink.href = isInPages ? '../index.html' : './index.html';
+        if (isGitHubPages) {
+            logoLink.href = baseUrl + '/index.html';
+        } else {
+            logoLink.href = (isInPages || isInBlog) ? '../index.html' : './index.html';
+        }
         logoLink.onclick = function(e) {
             // console.log(`🏠 Navegando a: ${this.href}`);
             // Permitir navegación normal
@@ -95,10 +104,20 @@ function setupNavigation() {
         const page = link.getAttribute('data-page');
         let targetUrl;
         
-        if (page === 'index') {
-            targetUrl = isInPages ? '../index.html' : './index.html';
+        if (isGitHubPages) {
+            // En GitHub Pages, usar rutas absolutas
+            if (page === 'index') {
+                targetUrl = baseUrl + '/index.html';
+            } else {
+                targetUrl = baseUrl + `/pages/${page}.html`;
+            }
         } else {
-            targetUrl = isInPages ? `./${page}.html` : `./pages/${page}.html`;
+            // En local, usar rutas relativas
+            if (page === 'index') {
+                targetUrl = (isInPages || isInBlog) ? '../index.html' : './index.html';
+            } else {
+                targetUrl = (isInPages || isInBlog) ? `./${page}.html` : `./pages/${page}.html`;
+            }
         }
         
         link.href = targetUrl;
