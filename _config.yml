@@ -1,0 +1,32 @@
+# GitHub Pages configuration
+plugins:
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+
+# Include HTML files in processing
+include:
+  - "_*"
+  - "components/*"
+  - "*.html"
+
+# Exclude unnecessary files
+exclude:
+  - "*.md"
+  - "README.md"
+  - "node_modules/"
+  - ".git/"
+  - ".github/"
+
+# Set baseurl if needed
+baseurl: ""
+url: "https://luisvicenteguzmanfreire.github.io"
+
+# Allow CORS
+cors: true
+
+# Process HTML files
+markdown: kramdown
+highlighter: rouge

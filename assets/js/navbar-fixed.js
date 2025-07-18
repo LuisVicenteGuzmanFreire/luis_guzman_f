@@ -18,9 +18,16 @@ function loadNavbar() {
     }
 
     const currentPath = window.location.pathname;
-    const isInPages = currentPath.includes('/pages/');
     
-    let navbarPath = isInPages ? "../components/navbar-working.html" : "components/navbar-working.html";
+    // Detectar si estamos en GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
+    
+    // Ajustar ruta del componente
+    let navbarPath = 'components/navbar-working.html';
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        navbarPath = '../components/navbar-working.html';
+    }
     
     // Cargando navbar desde la ruta correcta
 
