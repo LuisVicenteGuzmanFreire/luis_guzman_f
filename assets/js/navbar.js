@@ -13,15 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathNavbar;
     
-    if (currentPath.includes('/pages/')) {
-        // Si estamos en una página dentro de /pages/
-        pathNavbar = "../components/navbar-final.html";
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        // Si estamos en una página dentro de /pages/ o /blog/
+        pathNavbar = "../components/navbar-working.html";
     } else {
         // Si estamos en la raíz
-        pathNavbar = "components/navbar-final.html";
+        pathNavbar = "components/navbar-working.html";
     }
 
-    console.log("📌 Intentando cargar navbar desde:", pathNavbar);
+    // console.log("📌 Intentando cargar navbar desde:", pathNavbar);
 
     fetch(pathNavbar)
         .then(response => response.ok ? response.text() : Promise.reject("Error cargando navbar"))

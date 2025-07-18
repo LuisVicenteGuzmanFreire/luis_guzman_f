@@ -22,8 +22,10 @@
                 <i class="fab fa-whatsapp" aria-hidden="true"></i>
             </a>
 
-            <a href="mailto:luisvicente1988@hotmail.com" 
-               class="text-white" aria-label="Enviar correo electrónico">
+            <a href="mailto:luisvicente1988@hotmail.com?subject=Contacto%20desde%20tu%20portafolio%20web&body=Hola%20Luis,%0A%0AMe%20pongo%20en%20contacto%20contigo%20desde%20tu%20portafolio%20web.%0A%0ASaludos,"
+               class="text-white email-link" 
+               aria-label="Enviar correo electrónico" 
+               title="Enviar correo electrónico">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
             </a>
         </div>
@@ -36,3 +38,34 @@
         </div>
     </div>
 </footer>
+
+<script>
+// Asegurar que el enlace de correo funcione correctamente
+document.addEventListener('DOMContentLoaded', function() {
+    const emailLink = document.querySelector('.email-link');
+    if (emailLink) {
+        emailLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Crear el enlace mailto
+            const email = 'luisvicente1988@hotmail.com';
+            const subject = 'Contacto desde tu portafolio web';
+            const body = 'Hola Luis,\n\nMe pongo en contacto contigo desde tu portafolio web.\n\nSaludos,';
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Intentar abrir el enlace
+            try {
+                window.open(mailtoLink, '_self');
+            } catch (error) {
+                // Si falla, copiar al portapapeles
+                navigator.clipboard.writeText(email).then(function() {
+                    alert('Email copiado al portapapeles: ' + email);
+                }).catch(function() {
+                    alert('Por favor, envía un correo a: ' + email);
+                });
+            }
+        });
+    }
+});
+</script>

@@ -1,0 +1,150 @@
+<!-- Sección de Testimonios -->
+<section class="container mt-5" id="testimonials">
+    <h2 class="text-center mb-4" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
+    
+    <div class="row">
+        <!-- Testimonio 1 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100 shadow-sm testimonial-card">
+                <div class="card-body text-center">
+                    <div class="testimonial-stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <p class="card-text">"Excelente trabajo en análisis geoespacial. Luis nos ayudó a optimizar nuestros cultivos con tecnología de punta aumentando la productividad en un 25%."</p>
+                    <div class="testimonial-author">
+                        <h6 class="card-title mt-3 mb-1">María González</h6>
+                        <small class="text-muted">Directora Técnica - AgroEcuador S.A.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonio 2 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card h-100 shadow-sm testimonial-card">
+                <div class="card-body text-center">
+                    <div class="testimonial-stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <p class="card-text">"Sus conocimientos en SIG y teledetección fueron fundamentales para nuestro proyecto de conservación. Los mapas de precisión transformaron nuestra gestión."</p>
+                    <div class="testimonial-author">
+                        <h6 class="card-title mt-3 mb-1">Dr. Carlos Méndez</h6>
+                        <small class="text-muted">Investigador Principal - Instituto Ambiental</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonio 3 -->
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card h-100 shadow-sm testimonial-card">
+                <div class="card-body text-center">
+                    <div class="testimonial-stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                    <p class="card-text">"Profesional altamente calificado. Los modelos de machine learning superaron nuestras expectativas y el geoportal desarrollado es excepcional."</p>
+                    <div class="testimonial-author">
+                        <h6 class="card-title mt-3 mb-1">Ana Patricia Silva</h6>
+                        <small class="text-muted">Coordinadora GIS - TechAgro Solutions</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="mb-3">¿Listo para transformar tu proyecto?</h3>
+        <p class="lead mb-4">Únete a más de 50 empresas que confían en nuestros servicios de geomática</p>
+        <a href="pages/contact.html" class="btn btn-primary btn-lg me-3" id="contact-btn">
+            <i class="fas fa-rocket"></i> Iniciar Proyecto
+        </a>
+        <a href="pages/services.html" class="btn btn-outline-primary btn-lg" id="services-btn">
+            <i class="fas fa-info-circle"></i> Ver Servicios
+        </a>
+    </div>
+</section>
+
+<style>
+.testimonial-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.testimonial-stars {
+    font-size: 1.1rem;
+}
+
+.testimonial-author h6 {
+    color: #2d6a4f;
+    font-weight: 600;
+}
+
+.fa-quote-left {
+    opacity: 0.3;
+}
+
+#testimonials {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    margin-top: 3rem !important;
+}
+
+.btn {
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+</style>
+
+<script>
+// Ajustar rutas de botones según ubicación de la página
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const isInPages = currentPath.includes('/pages/');
+    
+    const contactBtn = document.getElementById('contact-btn');
+    const servicesBtn = document.getElementById('services-btn');
+    
+    if (contactBtn && servicesBtn) {
+        if (isInPages) {
+            // Estamos en una página dentro de /pages/, ajustar rutas
+            contactBtn.href = './contact.html';
+            servicesBtn.href = './services.html';
+        } else {
+            // Estamos en la raíz, mantener rutas originales
+            contactBtn.href = 'pages/contact.html';
+            servicesBtn.href = 'pages/services.html';
+        }
+    }
+});
+</script>

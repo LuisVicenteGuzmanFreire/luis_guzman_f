@@ -102,14 +102,14 @@
 <script>
 // Configuración de navegación al cargar
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔧 Configurando navegación...');
+    // console.log('🔧 Configurando navegación...');
     
     // Detectar ubicación actual
     const currentPath = window.location.pathname;
     const isInPages = currentPath.includes('/pages/');
     
-    console.log('📍 Ruta actual:', currentPath);
-    console.log('📁 En carpeta pages:', isInPages);
+    // console.log('📍 Ruta actual:', currentPath);
+    // console.log('📁 En carpeta pages:', isInPages);
     
     // Configurar enlaces
     const navLinks = document.querySelectorAll('.nav-btn-custom');
@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         link.href = targetUrl;
-        console.log(`🔗 ${page} → ${targetUrl}`);
+        // console.log(`🔗 ${page} → ${targetUrl}`);
         
         // Event listener para debug
         link.addEventListener('click', function(e) {
-            console.log(`👆 Click en ${page} → Navegando a: ${this.href}`);
+            // console.log(`👆 Click en ${page} → Navegando a: ${this.href}`);
         });
     });
     
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (brand) {
         brand.href = isInPages ? '../index.html' : './index.html';
         brand.addEventListener('click', function(e) {
-            console.log(`🏠 Click en logo → Navegando a: ${this.href}`);
+            // console.log(`🏠 Click en logo → Navegando a: ${this.href}`);
         });
     }
     
@@ -155,7 +155,7 @@ function highlightCurrentPage() {
         currentPage = 'index';
     }
     
-    console.log(`🎯 Página actual detectada: ${currentPage}`);
+    // console.log(`🎯 Página actual detectada: ${currentPage}`);
     
     const pages = ['index', 'about', 'services', 'projects', 'blog', 'contact'];
     const navLinks = document.querySelectorAll('.nav-btn-custom');
@@ -165,7 +165,7 @@ function highlightCurrentPage() {
         
         if (pages[index] === currentPage) {
             link.classList.add('active');
-            console.log(`✅ Marcando como activo: ${pages[index]}`);
+            // console.log(`✅ Marcando como activo: ${pages[index]}`);
         }
     });
 }

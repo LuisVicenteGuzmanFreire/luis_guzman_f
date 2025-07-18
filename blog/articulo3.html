@@ -25,7 +25,7 @@
     <!-- ============================ -->
     <!-- Inclusión de hojas de estilo externas -->
     <!-- ============================ -->
-    <link rel="icon" href="/luis_guzman_f/favicon.ico">
+    <link rel="icon" href="../favicon.ico">
     <!-- Bootstrap CSS: Framework para diseño responsivo y componentes estilizados -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
@@ -54,6 +54,9 @@
     <!-- Contenedor para la barra de navegación -->
     <div id="nav-container"></div>
     <!-- El contenido del navbar se insertará dinámicamente mediante JavaScript (por ejemplo, navbar.js) -->
+    
+    <!-- Contenedor para breadcrumbs -->
+    <div id="breadcrumb-container"></div>
 
     <!-- Contenido principal del artículo -->
     <main class="container mt-5">
@@ -111,20 +114,20 @@
                         <p>📢 Comparte este artículo:</p>
                         <!-- Texto introductorio para los botones de compartir -->
 
-                        <a href="#" class="btn btn-outline-primary btn-sm">
+                        <a href="javascript:void(0)" onclick="shareOnFacebook()" class="btn btn-outline-primary btn-sm">
                             <i class="fab fa-facebook-f"></i> Facebook
                         </a>
                         <!-- Botón para compartir en Facebook, con estilo "outline-primary" y tamaño pequeño -->
 
-                        <a href="#" class="btn btn-outline-info btn-sm">
+                        <a href="javascript:void(0)" onclick="shareOnTwitter()" class="btn btn-outline-info btn-sm">
                             <i class="fab fa-twitter"></i> Twitter
                         </a>
                         <!-- Botón para compartir en Twitter, con estilo "outline-info" -->
 
-                        <a href="#" class="btn btn-outline-danger btn-sm">
+                        <a href="javascript:void(0)" onclick="shareOnWhatsApp()" class="btn btn-outline-success btn-sm">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <!-- Botón para compartir en WhatsApp, con estilo "outline-danger" -->
+                        <!-- Botón para compartir en WhatsApp, con estilo "outline-success" -->
                     </div>
                 </article>
             </div>
@@ -164,7 +167,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- Script para cargar dinámicamente la barra de navegación -->
-    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/navbar-fixed.js"></script>
 
     <!-- Script para cargar dinámicamente el pie de página -->
     <script src="../assets/js/footer.js"></script>
@@ -174,6 +177,27 @@
 
     <script>
         AOS.init();
+        
+        // Funciones para compartir en redes sociales
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('La gestión y análisis de grandes volúmenes de datos en el ámbito de la geomática ha permitido avances significativos en la cartografía y teledetección.');
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title} - ${text}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent(`*${document.title}*\n\nLa gestión y análisis de grandes volúmenes de datos en el ámbito de la geomática ha permitido avances significativos en la cartografía, la teledetección y el modelado predictivo.\n\nLee el artículo completo aquí: ${window.location.href}`);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
     </script>
 
 </body>

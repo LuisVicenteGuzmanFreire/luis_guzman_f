@@ -28,7 +28,7 @@
     <!-- ============================ -->
     <!-- Inclusión de hojas de estilo y bibliotecas externas -->
     <!-- ============================ -->
-    <link rel="icon" href="/luis_guzman_f/favicon.ico">
+    <link rel="icon" href="../favicon.ico">
     <!-- Bootstrap CSS: Framework para diseño responsivo y componentes estilizados -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
@@ -66,6 +66,9 @@
     <!-- Contenedor para la barra de navegación -->
     <div id="nav-container"></div>
     <!-- El contenido del navbar se insertará dinámicamente mediante JavaScript (por ejemplo, desde navbar.js) -->
+
+    <!-- Contenedor para breadcrumbs -->
+    <div id="breadcrumb-container"></div>
     
     <!-- Contenido principal de la página -->
     <!-- Sección de Contacto y Formulario -->
@@ -111,35 +114,67 @@
             <div class="col-md-6 d-flex align-items-center" data-aos="fade-left">
                 <div class="card shadow-lg p-4 w-100">
                     <h2 class="text-center mb-3">Envíame un mensaje</h2>
-                    <!-- Formulario de Contacto -->
-                    <form id="contact-form" class="contact-form needs-validation" novalidate role="form" aria-labelledby="form-title">
+                    <!-- Formulario de Contacto - Método Email Directo -->
+                    <form id="contact-form" class="contact-form">
+                        <!-- Campo obligatorio: name -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre *</label>
-                            <input type="text" class="form-control" id="name" name="name" required aria-required="true" aria-describedby="name-error">
-                            <div id="name-error" class="invalid-feedback" role="alert">Por favor, ingresa tu nombre completo.</div>
+                            <input type="text" class="form-control" name="name" id="name" required placeholder="Tu nombre completo">
                         </div>
 
+                        <!-- Campo obligatorio: email -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electrónico *</label>
-                            <input type="email" class="form-control" id="email" name="email" required aria-required="true" aria-describedby="email-error">
-                            <div id="email-error" class="invalid-feedback" role="alert">Por favor, ingresa un correo electrónico válido.</div>
+                            <input type="email" class="form-control" name="email" id="email" required placeholder="tu@email.com">
                         </div>
 
+                        <!-- Campo opcional: subject -->
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Tipo de Consulta</label>
+                            <select class="form-control" name="subject" id="subject">
+                                <option value="">Selecciona el tipo de consulta</option>
+                                <option value="Servicios SIG y Cartografía">Servicios SIG y Cartografía</option>
+                                <option value="Teledetección y Análisis Satelital">Teledetección y Análisis Satelital</option>
+                                <option value="Machine Learning Agrícola">Machine Learning Agrícola</option>
+                                <option value="Consultoría en Geomática">Consultoría en Geomática</option>
+                                <option value="Proyecto Personalizado">Proyecto Personalizado</option>
+                                <option value="Consulta General">Consulta General</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo obligatorio: message -->
                         <div class="mb-3">
                             <label for="message" class="form-label">Mensaje *</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-error" placeholder="Describe tu consulta o proyecto en geomática, SIG o agricultura de precisión..."></textarea>
-                            <div id="message-error" class="invalid-feedback" role="alert">Por favor, escribe tu mensaje (mínimo 10 caracteres).</div>
+                            <textarea class="form-control" name="message" id="message" rows="5" required placeholder="Describe tu consulta o proyecto en geomática, SIG o agricultura de precisión..."></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" aria-describedby="form-help">
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn-primary btn-lg w-100" id="submit-btn">
                             <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje
                         </button>
-                        <div id="form-help" class="form-text mt-2">* Campos obligatorios. Responderé en un plazo máximo de 24 horas.</div>
+                        
+                        <div class="form-text mt-3 text-center">
+                            <small>* Campos obligatorios. Responderé en un plazo máximo de 24 horas.</small>
+                        </div>
                     </form>
 
                     <!-- Mensaje de éxito -->
                     <div id="success-message" class="alert alert-success mt-3" style="display: none;" role="alert" aria-live="polite">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i> ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> 
+                        <strong>¡Mensaje enviado correctamente!</strong><br>
+                        Gracias por contactarme. Revisaré tu consulta y te responderé en un plazo máximo de 24 horas.
+                        <hr>
+                        <small>
+                            <i class="fas fa-whatsapp text-success"></i> 
+                            Para consultas urgentes: <a href="https://wa.me/593968189168" target="_blank">WhatsApp</a>
+                        </small>
+                    </div>
+
+                    <!-- Mensaje de éxito por URL (cuando regresa de Formspree) -->
+                    <div id="formspree-success" class="alert alert-success mt-3" style="display: none;" role="alert">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> 
+                        <strong>¡Tu mensaje ha sido enviado exitosamente!</strong><br>
+                        He recibido tu consulta y te contactaré pronto.
                     </div>
 
                 </div>
@@ -157,7 +192,7 @@
                 Aquí puedes encontrar nuestra ubicación exacta.
             </p>
             <!-- Párrafo descriptivo con animación y retraso de 200ms -->
-            <div id="map" class="map-container"></div>
+            <div id="map" class="map-container" data-aos="zoom-in" data-aos-delay="300"></div>
             <!-- Contenedor donde se renderizará el mapa interactivo mediante Leaflet -->
         </section>
 
@@ -192,6 +227,124 @@
 
     <!-- Archivo JavaScript principal con funcionalidades adicionales -->
     <script src="../assets/js/main.js"></script>
+
+    <!-- Script para manejar el formulario de contacto -->
+    <!-- Estilos para el mapa y marcador personalizado -->
+    <style>
+        .custom-marker {
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .custom-marker i {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+        }
+        
+        .custom-marker:hover i {
+            transform: scale(1.2);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+        }
+        
+        /* Mejorar el popup del mapa */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .leaflet-popup-tip {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+
+    <script>
+        // Inicializar AOS
+        AOS.init();
+        
+        // Formulario con AJAX - Sin redirección
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const formspreeSuccess = document.getElementById('formspree-success');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault(); // Prevenir envío normal
+                
+                // Validar formulario
+                if (!form.checkValidity()) {
+                    form.classList.add('was-validated');
+                    return;
+                }
+                
+                // Cambiar botón a "enviando"
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                submitBtn.disabled = true;
+                
+                // Recopilar datos del formulario
+                const name = form.name.value;
+                const email = form.email.value;
+                const subject = form.subject.value || 'Consulta General';
+                const message = form.message.value;
+                
+                // Crear contenido del email
+                const emailSubject = `💼 Consulta desde tu portafolio - ${subject}`;
+                const emailBody = `Hola Luis,
+
+Has recibido un nuevo mensaje desde tu portafolio web:
+
+👤 NOMBRE: ${name}
+📧 EMAIL: ${email}
+📋 TIPO: ${subject}
+
+💬 MENSAJE:
+${message}
+
+---
+Este mensaje fue enviado desde tu formulario de contacto web.
+
+Para responder, simplemente responde a este email.
+
+Saludos,
+Tu Portafolio Web`;
+                
+                // Crear enlace mailto
+                const mailtoLink = `mailto:luisvicente1988@hotmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Abrir cliente de email
+                window.location.href = mailtoLink;
+                
+                // Mostrar mensaje de confirmación
+                form.style.display = 'none';
+                formspreeSuccess.innerHTML = `
+                    <i class="fas fa-envelope-open" aria-hidden="true"></i> 
+                    <strong>¡Abriendo tu cliente de email!</strong><br>
+                    Se ha generado un email con tu mensaje. Solo tienes que hacer clic en "Enviar" en tu programa de email.
+                    <hr>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" onclick="window.open('https://wa.me/593968189168?text=${encodeURIComponent('Hola Luis, me interesa contactarte sobre: ' + subject)}', '_blank')">
+                            <i class="fas fa-whatsapp"></i> O enviar por WhatsApp
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="location.reload()">
+                            <i class="fas fa-redo"></i> Enviar otro mensaje
+                        </button>
+                    </div>
+                `;
+                formspreeSuccess.style.display = 'block';
+                formspreeSuccess.scrollIntoView({ behavior: 'smooth' });
+                form.reset();
+                
+                // Restaurar botón
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 
 </body>
 </html>

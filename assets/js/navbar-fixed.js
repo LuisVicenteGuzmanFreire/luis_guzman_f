@@ -5,7 +5,7 @@
 let navbarLoaded = false;
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("🚀 Iniciando sistema de navegación...");
+    // Sistema de navegación inicializado
     loadNavbar();
 });
 
@@ -22,9 +22,7 @@ function loadNavbar() {
     
     let navbarPath = isInPages ? "../components/navbar-working.html" : "components/navbar-working.html";
     
-    console.log(`📍 Ruta actual: ${currentPath}`);
-    console.log(`📁 En pages: ${isInPages}`);
-    console.log(`📋 Cargando navbar: ${navbarPath}`);
+    // Cargando navbar desde la ruta correcta
 
     fetch(navbarPath)
         .then(response => {
@@ -35,7 +33,7 @@ function loadNavbar() {
         })
         .then(html => {
             container.innerHTML = html;
-            console.log("✅ Navbar HTML insertado");
+            // console.log("✅ Navbar HTML insertado");
             
             // Esperar un momento para que el DOM se actualice
             setTimeout(() => {
@@ -60,7 +58,7 @@ function loadNavbar() {
 }
 
 function setupNavigation() {
-    console.log("🔧 Configurando navegación...");
+    // console.log("🔧 Configurando navegación...");
     
     const currentPath = window.location.pathname;
     const isInPages = currentPath.includes('/pages/');
@@ -70,15 +68,14 @@ function setupNavigation() {
     if (logoLink) {
         logoLink.href = isInPages ? '../index.html' : './index.html';
         logoLink.onclick = function(e) {
-            e.preventDefault();
-            console.log(`🏠 Navegando a: ${this.href}`);
-            window.location.href = this.href;
+            // console.log(`🏠 Navegando a: ${this.href}`);
+            // Permitir navegación normal
         };
     }
     
     // Configurar enlaces de navegación
     const navLinks = document.querySelectorAll('.nav-item-btn[data-page]');
-    console.log(`🔗 Encontrados ${navLinks.length} enlaces de navegación`);
+    // console.log(`🔗 Encontrados ${navLinks.length} enlaces de navegación`);
     
     navLinks.forEach(link => {
         const page = link.getAttribute('data-page');
@@ -91,13 +88,12 @@ function setupNavigation() {
         }
         
         link.href = targetUrl;
-        console.log(`🔗 ${page} → ${targetUrl}`);
+        // console.log(`🔗 ${page} → ${targetUrl}`);
         
         // Configurar click event
         link.onclick = function(e) {
-            e.preventDefault();
-            console.log(`👆 Click en ${page} → ${this.href}`);
-            window.location.href = this.href;
+            // console.log(`👆 Click en ${page} → ${this.href}`);
+            // Permitir navegación normal sin preventDefault
         };
     });
     
@@ -113,7 +109,7 @@ function highlightCurrentPage() {
         currentPage = 'index';
     }
     
-    console.log(`🎯 Página actual: ${currentPage}`);
+    // console.log(`🎯 Página actual: ${currentPage}`);
     
     // Limpiar estados activos
     const allNavLinks = document.querySelectorAll('.nav-item-btn');
@@ -125,9 +121,9 @@ function highlightCurrentPage() {
     const currentLink = document.querySelector(`.nav-item-btn[data-page="${currentPage}"]`);
     if (currentLink) {
         currentLink.classList.add('active');
-        console.log(`✅ Marcado como activo: ${currentPage}`);
+        // console.log(`✅ Marcado como activo: ${currentPage}`);
     } else {
-        console.log(`⚠️ No se encontró enlace para: ${currentPage}`);
+        // console.log(`⚠️ No se encontró enlace para: ${currentPage}`);
     }
 }
 

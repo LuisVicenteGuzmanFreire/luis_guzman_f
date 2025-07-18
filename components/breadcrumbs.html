@@ -1,0 +1,110 @@
+<!-- Navegación Breadcrumbs -->
+<nav aria-label="breadcrumb" class="mt-3">
+    <div class="container">
+        <ol class="breadcrumb" id="dynamic-breadcrumb">
+            <!-- Los breadcrumbs se generarán dinámicamente con JavaScript -->
+        </ol>
+    </div>
+</nav>
+
+<style>
+.breadcrumb {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+.breadcrumb-item.active {
+    color: #2d6a4f;
+    font-weight: 600;
+}
+
+.breadcrumb-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #2d6a4f;
+}
+</style>
+
+<script>
+// Generar breadcrumbs dinámicamente - Versión corregida
+function generateBreadcrumbs() {
+    // Esperar a que el contenedor esté disponible
+    setTimeout(function() {
+        const breadcrumbContainer = document.getElementById('dynamic-breadcrumb');
+        if (!breadcrumbContainer) {
+            // console.log('❌ No se encontró #dynamic-breadcrumb');
+            return;
+        }
+        
+        // console.log('🍞 Generando breadcrumbs...');
+        
+        const currentPath = window.location.pathname;
+        const isInPages = currentPath.includes('/pages/');
+        
+        // console.log('📍 Ruta actual:', currentPath);
+        // console.log('📁 En pages:', isInPages);
+        
+        // Mapeo de páginas
+        const pageMap = {
+            'index.html': 'Inicio',
+            'about.html': 'Sobre Mí',
+            'services.html': 'Servicios',
+            'projects.html': 'Proyectos',
+            'contact.html': 'Contacto',
+            'blog.html': 'Blog'
+        };
+        
+        // Obtener nombre de página actual
+        let currentPage = currentPath.split('/').pop();
+        if (!currentPage || currentPage === '' || currentPage === '/') {
+            currentPage = 'index.html';
+        }
+        
+        // console.log('📄 Página actual:', currentPage);
+        
+        // Crear breadcrumbs
+        let breadcrumbHTML = '';
+        
+        // Siempre incluir "Inicio" si no estamos en la página principal
+        if (currentPage !== 'index.html') {
+            const homeHref = isInPages ? '../index.html' : './index.html';
+            breadcrumbHTML += `<li class="breadcrumb-item"><a href="${homeHref}"><i class="fas fa-home me-1"></i>Inicio</a></li>`;
+        }
+        
+        // Agregar página actual
+        const pageName = pageMap[currentPage] || 'Página';
+        if (currentPage === 'index.html') {
+            breadcrumbHTML += `<li class="breadcrumb-item active" aria-current="page"><i class="fas fa-home me-1"></i>Inicio</li>`;
+        } else {
+            breadcrumbHTML += `<li class="breadcrumb-item active" aria-current="page">${pageName}</li>`;
+        }
+        
+        breadcrumbContainer.innerHTML = breadcrumbHTML;
+        // console.log('✅ Breadcrumbs generados:', breadcrumbHTML);
+    }, 100);
+}
+
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', generateBreadcrumbs);
+} else {
+    generateBreadcrumbs();
+}
+
+// También ejecutar después de un pequeño delay para asegurar que el componente esté cargado
+setTimeout(generateBreadcrumbs, 200);
+</script>

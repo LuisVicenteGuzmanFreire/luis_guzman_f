@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initProjectFilters() {
-    console.log("🔄 Inicializando filtros de proyectos...");
+    // console.log("🔄 Inicializando filtros de proyectos...");
 
     const filterButtons = document.querySelectorAll(".filter-btn");  /* Botones de filtro */
     const projectCards = document.querySelectorAll(".col-md-4.project-card");  /* Tarjetas de proyectos */

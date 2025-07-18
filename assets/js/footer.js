@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathFooter;
     
-    if (currentPath.includes('/pages/')) {
-        // Si estamos en una página dentro de /pages/
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        // Si estamos en una página dentro de /pages/ o /blog/
         pathFooter = "../components/footer-dynamic.html";
     } else {
         // Si estamos en la raíz
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    console.log("📌 Intentando cargar footer desde:", pathFooter);
+    // console.log("📌 Intentando cargar footer desde:", pathFooter);
 
     fetch(pathFooter)
         .then(response => response.ok ? response.text() : Promise.reject("Error cargando footer"))
