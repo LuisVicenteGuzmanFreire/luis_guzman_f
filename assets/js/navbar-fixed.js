@@ -19,21 +19,12 @@ function loadNavbar() {
 
     const currentPath = window.location.pathname;
     
-    // Detectar si estamos en GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
-    
-    // Ajustar ruta del componente
+    // Lógica simple: si estamos en una subcarpeta, usar ../
     let navbarPath;
-    if (isGitHubPages) {
-        // En GitHub Pages, usar ruta absoluta
-        navbarPath = baseUrl + '/components/navbar-working.html';
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        navbarPath = '../components/navbar-working.html';
     } else {
-        // En local, usar ruta relativa
         navbarPath = 'components/navbar-working.html';
-        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-            navbarPath = '../components/navbar-working.html';
-        }
     }
     
     // Cargando navbar desde la ruta correcta
@@ -72,63 +63,29 @@ function loadNavbar() {
 }
 
 function setupNavigation() {
-    // console.log("🔧 Configurando navegación...");
-    
     const currentPath = window.location.pathname;
-    const isInPages = currentPath.includes('/pages/');
-    const isInBlog = currentPath.includes('/blog/');
-    
-    // Detectar si estamos en GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
+    const isInSubfolder = currentPath.includes('/pages/') || currentPath.includes('/blog/');
     
     // Configurar logo
     const logoLink = document.getElementById('logo-link');
     if (logoLink) {
-        if (isGitHubPages) {
-            logoLink.href = baseUrl + '/index.html';
-        } else {
-            logoLink.href = (isInPages || isInBlog) ? '../index.html' : './index.html';
-        }
-        logoLink.onclick = function(e) {
-            // console.log(`🏠 Navegando a: ${this.href}`);
-            // Permitir navegación normal
-        };
+        logoLink.href = isInSubfolder ? '../index.html' : './index.html';
     }
     
     // Configurar enlaces de navegación
     const navLinks = document.querySelectorAll('.nav-item-btn[data-page]');
-    // console.log(`🔗 Encontrados ${navLinks.length} enlaces de navegación`);
     
     navLinks.forEach(link => {
         const page = link.getAttribute('data-page');
         let targetUrl;
         
-        if (isGitHubPages) {
-            // En GitHub Pages, usar rutas absolutas
-            if (page === 'index') {
-                targetUrl = baseUrl + '/index.html';
-            } else {
-                targetUrl = baseUrl + `/pages/${page}.html`;
-            }
+        if (page === 'index') {
+            targetUrl = isInSubfolder ? '../index.html' : './index.html';
         } else {
-            // En local, usar rutas relativas
-            if (page === 'index') {
-                targetUrl = (isInPages || isInBlog) ? '../index.html' : './index.html';
-            } else {
-                // Desde blog o pages, ir a ../pages/pagina.html
-                targetUrl = (isInPages || isInBlog) ? `../pages/${page}.html` : `./pages/${page}.html`;
-            }
+            targetUrl = isInSubfolder ? `../pages/${page}.html` : `./pages/${page}.html`;
         }
         
         link.href = targetUrl;
-        // console.log(`🔗 ${page} → ${targetUrl}`);
-        
-        // Configurar click event
-        link.onclick = function(e) {
-            // console.log(`👆 Click en ${page} → ${this.href}`);
-            // Permitir navegación normal sin preventDefault
-        };
     });
     
     // Destacar página actual

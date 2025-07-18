@@ -303,13 +303,8 @@
 
     <!-- Cargar componentes dinámicos -->
     <script>
-        // Detectar si estamos en GitHub Pages
-        const isGitHubPages = window.location.hostname.includes('github.io');
-        const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
-        
         // Cargar breadcrumbs
-        const breadcrumbsPath = isGitHubPages ? baseUrl + '/components/breadcrumbs.html' : 'components/breadcrumbs.html';
-        fetch(breadcrumbsPath)
+        fetch('components/breadcrumbs.html')
             .then(response => response.text())
             .then(data => {
                 const container = document.getElementById('breadcrumb-container');
@@ -318,8 +313,7 @@
             .catch(error => // console.log('Error cargando breadcrumbs:', error));
         
         // Cargar testimonios
-        const testimonialsPath = isGitHubPages ? baseUrl + '/components/testimonials.html' : 'components/testimonials.html';
-        fetch(testimonialsPath)
+        fetch('components/testimonials.html')
             .then(response => response.text())
             .then(data => {
                 const container = document.getElementById('testimonials-container');

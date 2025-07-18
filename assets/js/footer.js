@@ -13,20 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathFooter;
     
-    // Detectar si estamos en GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
-    
-    if (isGitHubPages) {
-        // En GitHub Pages, usar ruta absoluta
-        pathFooter = baseUrl + '/components/footer-dynamic.html';
+    // Lógica simple: si estamos en una subcarpeta, usar ../
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        pathFooter = "../components/footer-dynamic.html";
     } else {
-        // En local, usar ruta relativa
-        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-            pathFooter = "../components/footer-dynamic.html";
-        } else {
-            pathFooter = "components/footer-dynamic.html";
-        }
+        pathFooter = "components/footer-dynamic.html";
     }
 
 

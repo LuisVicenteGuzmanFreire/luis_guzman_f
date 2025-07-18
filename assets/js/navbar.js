@@ -13,20 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPath = window.location.pathname;
     let pathNavbar;
     
-    // Detectar si estamos en GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
-    
-    if (isGitHubPages) {
-        // En GitHub Pages, usar ruta absoluta
-        pathNavbar = baseUrl + '/components/navbar-working.html';
+    // Lógica simple: si estamos en una subcarpeta, usar ../
+    if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
+        pathNavbar = "../components/navbar-working.html";
     } else {
-        // En local, usar ruta relativa
-        if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
-            pathNavbar = "../components/navbar-working.html";
-        } else {
-            pathNavbar = "components/navbar-working.html";
-        }
+        pathNavbar = "components/navbar-working.html";
     }
 
     // console.log("📌 Intentando cargar navbar desde:", pathNavbar);
@@ -49,21 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setupNavigation() {
         const currentPath = window.location.pathname;
-        const isInPages = currentPath.includes('/pages/');
-        const isInBlog = currentPath.includes('/blog/');
-        
-        // Detectar si estamos en GitHub Pages
-        const isGitHubPages = window.location.hostname.includes('github.io');
-        const baseUrl = isGitHubPages ? '/luis_guzman_f' : '';
+        const isInSubfolder = currentPath.includes('/pages/') || currentPath.includes('/blog/');
         
         // Configurar logo
         const logoLink = document.getElementById('logo-link');
         if (logoLink) {
-            if (isGitHubPages) {
-                logoLink.href = baseUrl + '/index.html';
-            } else {
-                logoLink.href = (isInPages || isInBlog) ? '../index.html' : './index.html';
-            }
+            logoLink.href = isInSubfolder ? '../index.html' : './index.html';
         }
         
         // Configurar enlaces de navegación
@@ -73,21 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const page = link.getAttribute('data-page');
             let targetUrl;
             
-            if (isGitHubPages) {
-                // En GitHub Pages, usar rutas absolutas
-                if (page === 'index') {
-                    targetUrl = baseUrl + '/index.html';
-                } else {
-                    targetUrl = baseUrl + `/pages/${page}.html`;
-                }
+            if (page === 'index') {
+                targetUrl = isInSubfolder ? '../index.html' : './index.html';
             } else {
-                // En local, usar rutas relativas
-                if (page === 'index') {
-                    targetUrl = (isInPages || isInBlog) ? '../index.html' : './index.html';
-                } else {
-                    // Desde blog o pages, ir a ../pages/pagina.html
-                    targetUrl = (isInPages || isInBlog) ? `../pages/${page}.html` : `./pages/${page}.html`;
-                }
+                targetUrl = isInSubfolder ? `../pages/${page}.html` : `./pages/${page}.html`;
             }
             
             link.href = targetUrl;
