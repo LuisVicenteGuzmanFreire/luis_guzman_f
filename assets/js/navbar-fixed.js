@@ -116,7 +116,8 @@ function setupNavigation() {
             if (page === 'index') {
                 targetUrl = (isInPages || isInBlog) ? '../index.html' : './index.html';
             } else {
-                targetUrl = (isInPages || isInBlog) ? `./${page}.html` : `./pages/${page}.html`;
+                // Desde blog o pages, ir a ../pages/pagina.html
+                targetUrl = (isInPages || isInBlog) ? `../pages/${page}.html` : `./pages/${page}.html`;
             }
         }
         
