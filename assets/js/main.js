@@ -248,8 +248,11 @@ const App = {
 document.addEventListener("DOMContentLoaded", () => {
     App.init();
     
-    // Eliminar elementos skip-to-content problemáticos
+    // Eliminar elementos skip-to-content problemáticos - MÚLTIPLES INTENTOS
     setTimeout(() => removeSkipToContentElements(), 100);
+    setTimeout(() => removeSkipToContentElements(), 500);
+    setTimeout(() => removeSkipToContentElements(), 1000);
+    setTimeout(() => removeSkipToContentElements(), 2000);
 });
 
 window.addEventListener("load", () => {

@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.ok ? response.text() : Promise.reject("Error cargando footer"))
         .then(data => {
             container.innerHTML = data;
+            
+            // Eliminar skip-to-content después de cargar footer
+            if (typeof removeSkipToContentElements === 'function') {
+                setTimeout(() => removeSkipToContentElements(), 100);
+            }
         })
         .catch(error => {
             console.error("❌ Footer no cargado. Usando fallback.", error);
