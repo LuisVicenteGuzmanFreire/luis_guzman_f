@@ -247,12 +247,6 @@ const App = {
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
     App.init();
-    
-    // Eliminar elementos skip-to-content problemáticos - MÚLTIPLES INTENTOS
-    setTimeout(() => removeSkipToContentElements(), 100);
-    setTimeout(() => removeSkipToContentElements(), 500);
-    setTimeout(() => removeSkipToContentElements(), 1000);
-    setTimeout(() => removeSkipToContentElements(), 2000);
 });
 
 window.addEventListener("load", () => {
@@ -267,69 +261,4 @@ window.addEventListener("popstate", () => {
 function showPreloader() { Preloader.show(); }
 function hidePreloader() { Preloader.hide(); }
 function initContactForm() { ContactForm.init(); }
-
-// Función para eliminar elementos skip-to-content
-function removeSkipToContentElements() {
-    const selectors = [
-        '.skip-to-content',
-        'a[href="#main-content"]',
-        'a.skip-to-content',
-        '*[class*="skip"]',
-        '*[href*="#main-content"]',
-        '[aria-label*="skip"]',
-        '[aria-label*="Saltar"]'
-    ];
-    
-    selectors.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(element => {
-            if (element.textContent.includes('Saltar') || element.textContent.includes('skip')) {
-                element.remove();
-                console.log('🗑️ Eliminado elemento skip-to-content:', element);
-            }
-        });
-    });
-    
-    // Observer para eliminar elementos que se agreguen dinámicamente
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-                if (node.nodeType === 1) { // Element node
-                    // Verificar el nodo mismo
-                    if (node.matches && (
-                        node.matches('.skip-to-content') ||
-                        node.matches('a[href="#main-content"]') ||
-                        (node.textContent && node.textContent.includes('Saltar al contenido'))
-                    )) {
-                        node.remove();
-                        console.log('🗑️ Eliminado elemento skip-to-content dinámico:', node);
-                    }
-                    
-                    // Verificar hijos del nodo
-                    selectors.forEach(selector => {
-                        const children = node.querySelectorAll && node.querySelectorAll(selector);
-                        if (children) {
-                            children.forEach(child => {
-                                if (child.textContent.includes('Saltar') || child.textContent.includes('skip')) {
-                                    child.remove();
-                                    console.log('🗑️ Eliminado elemento skip-to-content hijo:', child);
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        });
-    });
-    
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-}
-
-
-
-
-
 

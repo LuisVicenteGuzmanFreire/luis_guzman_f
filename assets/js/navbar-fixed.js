@@ -47,11 +47,6 @@ function loadNavbar() {
             setTimeout(() => {
                 setupNavigation();
                 navbarLoaded = true;
-                
-                // Eliminar skip-to-content después de cargar navbar
-                if (typeof removeSkipToContentElements === 'function') {
-                    setTimeout(() => removeSkipToContentElements(), 100);
-                }
             }, 50);
         })
         .catch(error => {
