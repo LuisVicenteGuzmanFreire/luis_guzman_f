@@ -82,6 +82,18 @@
     <script src="../assets/js/footer.js"></script>
     <script src="../assets/js/main.js"></script>
 
+    <!-- Cargar componentes dinámicos -->
+    <script>
+        // Cargar breadcrumbs
+        fetch('../components/breadcrumbs.html')
+            .then(response => response.text())
+            .then(data => {
+                const container = document.getElementById('breadcrumb-container');
+                if (container) container.innerHTML = data;
+            })
+            .catch(error => console.log('Error cargando breadcrumbs:', error));
+    </script>
+
     <script>
         AOS.init();
         
