@@ -243,6 +243,15 @@ const App = {
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
     App.init();
+    
+    // Desregistrar Service Worker problemático
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
 });
 
 window.addEventListener("load", () => {
