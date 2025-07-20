@@ -18,13 +18,16 @@ function loadNavbar() {
     }
 
     const currentPath = window.location.pathname;
+    console.log('🔍 Debug navbar - currentPath:', currentPath);
     
     // Lógica simple: si estamos en una subcarpeta, usar ../
     let navbarPath;
     if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
         navbarPath = '../components/navbar-working.html';
+        console.log('📁 Detectado en subcarpeta, usando ruta:', navbarPath);
     } else {
         navbarPath = 'components/navbar-working.html';
+        console.log('🏠 Detectado en raíz, usando ruta:', navbarPath);
     }
     
     // Cargando navbar desde la ruta correcta
