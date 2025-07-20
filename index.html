@@ -111,6 +111,20 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/lazy-loading.css">
+    
+    <!-- ELIMINAR SKIP-TO-CONTENT DE MANERA BRUTAL -->
+    <style>
+        a[href="#main-content"], 
+        .skip-to-content,
+        *[href*="#main-content"],
+        *[class*="skip"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            left: -99999px !important;
+        }
+    </style>
     <!-- Se incluye el archivo de estilos para el modo oscuro y lazy loading -->
     
 </head>
