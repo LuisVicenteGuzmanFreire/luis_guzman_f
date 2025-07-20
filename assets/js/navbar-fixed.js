@@ -18,16 +18,13 @@ function loadNavbar() {
     }
 
     const currentPath = window.location.pathname;
-    console.log('🔍 Debug navbar - currentPath:', currentPath);
     
     // Lógica simple: si estamos en una subcarpeta, usar ../
     let navbarPath;
     if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
         navbarPath = '../components/navbar-working.html';
-        console.log('📁 Detectado en subcarpeta, usando ruta:', navbarPath);
     } else {
         navbarPath = 'components/navbar-working.html';
-        console.log('🏠 Detectado en raíz, usando ruta:', navbarPath);
     }
     
     // Cargando navbar desde la ruta correcta
@@ -41,7 +38,6 @@ function loadNavbar() {
         })
         .then(html => {
             container.innerHTML = html;
-            // console.log("✅ Navbar HTML insertado");
             
             // Esperar un momento para que el DOM se actualice
             setTimeout(() => {
@@ -103,8 +99,6 @@ function highlightCurrentPage() {
         currentPage = 'index';
     }
     
-    // console.log(`🎯 Página actual: ${currentPage}`);
-    
     // Limpiar estados activos
     const allNavLinks = document.querySelectorAll('.nav-item-btn');
     allNavLinks.forEach(link => {
@@ -115,9 +109,6 @@ function highlightCurrentPage() {
     const currentLink = document.querySelector(`.nav-item-btn[data-page="${currentPage}"]`);
     if (currentLink) {
         currentLink.classList.add('active');
-        // console.log(`✅ Marcado como activo: ${currentPage}`);
-    } else {
-        // console.log(`⚠️ No se encontró enlace para: ${currentPage}`);
     }
 }
 

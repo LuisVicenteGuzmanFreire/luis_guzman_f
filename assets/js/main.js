@@ -182,7 +182,6 @@ const Preloader = {
 const Navigation = {
     init() {
         // Navegación completamente manejada por navbar-fixed.js
-        // console.log("🔗 Navegación delegada a navbar-fixed.js");
     }
 };
 
@@ -225,8 +224,6 @@ const Utils = {
 // =========================
 const App = {
     init() {
-        // console.log("✅ Aplicación inicializada correctamente");
-        
         // Inicializar todos los módulos
         DarkMode.init();
         ContactForm.init();
@@ -237,7 +234,6 @@ const App = {
     },
     
     reinitialize() {
-        // console.log("🔄 Reinicializando aplicación...");
         Utils.initAOS();
     }
 };

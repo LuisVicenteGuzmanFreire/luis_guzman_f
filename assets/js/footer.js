@@ -11,20 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Detectar la profundidad de la carpeta para ajustar la ruta correctamente
     let currentPath = window.location.pathname;
-    console.log('🔍 Debug footer - currentPath:', currentPath);
     let pathFooter;
     
     // Lógica simple: si estamos en una subcarpeta, usar ../
     if (currentPath.includes('/pages/') || currentPath.includes('/blog/')) {
         pathFooter = "../components/footer-dynamic.html";
-        console.log('📁 Detectado en subcarpeta, usando ruta footer:', pathFooter);
     } else {
         pathFooter = "components/footer-dynamic.html";
-        console.log('🏠 Detectado en raíz, usando ruta footer:', pathFooter);
     }
-
-
-    // console.log("📌 Intentando cargar footer desde:", pathFooter);
 
     fetch(pathFooter)
         .then(response => response.ok ? response.text() : Promise.reject("Error cargando footer"))
