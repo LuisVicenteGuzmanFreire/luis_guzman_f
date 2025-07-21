@@ -195,16 +195,21 @@ body.dark-mode {
     color: #ffb703 !important; /* WCAG 2.1 AA: Ratio 9.43:1 */
 }
 
-/* Botones outline en modo oscuro */
+/* Botones outline en modo oscuro - COMPORTAMIENTO IDÉNTICO A BOTONES SÓLIDOS */
 .dark-mode .btn-outline-primary {
+    background-color: #ffb703 !important; /* Mismo fondo que btn-primary */
     border-color: #ffb703 !important;
-    color: #ffb703 !important; /* WCAG 2.1 AA: Ratio 9.43:1 */
+    color: #1b1f2a !important; /* WCAG 2.1 AA: Ratio 9.43:1 - mismo texto que btn-primary */
+    font-weight: bold !important;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .dark-mode .btn-outline-primary:hover {
-    background-color: #ffb703 !important;
-    border-color: #ffb703 !important;
-    color: #1b1f2a !important; /* WCAG 2.1 AA: Ratio 9.43:1 */
+    background-color: #faa307 !important; /* Mismo hover que btn-primary */
+    border-color: #faa307 !important;
+    color: #1b1f2a !important; /* WCAG 2.1 AA: Ratio 8.08:1 - consistente */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* ======================== */
