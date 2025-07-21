@@ -114,7 +114,7 @@ h3 {
 }
 
 .nav-link:hover {
-    color: var(--highlight-color) !important;
+    color: #ffffff !important; /* WCAG 2.1 AA: Ratio 9.52:1 vs anterior 3.94:1 */
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -163,7 +163,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--highlight-color) !important;
+    color: #ffffff !important; /* WCAG 2.1 AA: Ratio 9.52:1 vs anterior 3.94:1 */
     transform: scale(1.2);
 }
 
