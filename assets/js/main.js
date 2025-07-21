@@ -57,83 +57,14 @@ const DarkMode = {
 };
 
 // =========================
-// FORMULARIO DE CONTACTO OPTIMIZADO
+// FORMULARIO DE CONTACTO - DESHABILITADO
 // =========================
+// Nota: El formulario de contacto ahora se maneja directamente en contact.html
+// para evitar duplicación de manejadores y mensajes
 const ContactForm = {
-    form: null,
-    successMessage: null,
-    
     init() {
-        this.form = AppConfig.getElement(AppConfig.selectors.contactForm);
-        this.successMessage = AppConfig.getElement(AppConfig.selectors.successMessage);
-        
-        if (!this.form) return;
-        
-        this.bindEvents();
-        this.setupValidation();
-    },
-    
-    bindEvents() {
-        // Remover eventos previos y añadir nuevo
-        this.form.removeEventListener("submit", this.handleSubmit.bind(this));
-        this.form.addEventListener("submit", this.handleSubmit.bind(this));
-    },
-    
-    setupValidation() {
-        const inputs = this.form.querySelectorAll("input, textarea");
-        inputs.forEach(input => {
-            input.addEventListener("blur", () => {
-                if (!input.checkValidity()) {
-                    input.classList.add("is-invalid");
-                    input.setAttribute('aria-invalid', 'true');
-                } else {
-                    input.classList.remove("is-invalid");
-                    input.setAttribute('aria-invalid', 'false');
-                }
-            });
-        });
-    },
-    
-    handleSubmit(event) {
-        event.preventDefault();
-        
-        if (!this.form || !this.successMessage) {
-            console.warn("⚠️ Elementos del formulario no encontrados.");
-            return;
-        }
-        
-        if (!this.form.checkValidity()) {
-            event.stopPropagation();
-            this.form.classList.add("was-validated");
-            return;
-        }
-        
-        this.showSuccessMessage();
-        this.resetForm();
-    },
-    
-    showSuccessMessage() {
-        this.successMessage.style.display = "block";
-        this.successMessage.style.opacity = "1";
-        this.successMessage.setAttribute('aria-live', 'polite');
-        
-        setTimeout(() => {
-            this.successMessage.style.opacity = "0";
-            setTimeout(() => {
-                this.successMessage.style.display = "none";
-            }, 500);
-        }, 5000);
-    },
-    
-    resetForm() {
-        setTimeout(() => {
-            this.form.reset();
-            this.form.classList.remove("was-validated");
-            this.form.querySelectorAll(".is-invalid").forEach(input => {
-                input.classList.remove("is-invalid");
-                input.setAttribute('aria-invalid', 'false');
-            });
-        }, 300);
+        // Formulario deshabilitado - manejado en la página específica
+        console.log("ℹ️ Formulario de contacto manejado localmente en contact.html");
     }
 };
 

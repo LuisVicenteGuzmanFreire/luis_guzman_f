@@ -158,19 +158,7 @@
                         </div>
                     </form>
 
-                    <!-- Mensaje de éxito -->
-                    <div id="success-message" class="alert alert-success mt-3" style="display: none;" role="alert" aria-live="polite">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i> 
-                        <strong>¡Mensaje enviado correctamente!</strong><br>
-                        Gracias por contactarme. Revisaré tu consulta y te responderé en un plazo máximo de 24 horas.
-                        <hr>
-                        <small>
-                            <i class="fas fa-whatsapp text-success"></i> 
-                            Para consultas urgentes: <a href="https://wa.me/593968189168" target="_blank">WhatsApp</a>
-                        </small>
-                    </div>
-
-                    <!-- Mensaje de éxito por URL (cuando regresa de Formspree) -->
+                    <!-- Mensaje de respuesta del formulario -->
                     <div id="formspree-success" class="alert alert-success mt-3" style="display: none;" role="alert">
                         <i class="fas fa-check-circle" aria-hidden="true"></i> 
                         <strong>¡Tu mensaje ha sido enviado exitosamente!</strong><br>
@@ -265,15 +253,28 @@
         // Inicializar AOS
         AOS.init();
         
-        // Formulario con AJAX - Sin redirección
+        // Formulario de contacto optimizado - Sistema único sin duplicación
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contact-form');
             const submitBtn = document.getElementById('submit-btn');
-            const successMessage = document.getElementById('success-message');
             const formspreeSuccess = document.getElementById('formspree-success');
             
+            // Verificar que los elementos existen
+            if (!form || !submitBtn || !formspreeSuccess) {
+                console.warn('⚠️ Elementos del formulario no encontrados');
+                return;
+            }
+            
+            // Variable para evitar envíos duplicados
+            let isSubmitting = false;
+            
             form.addEventListener('submit', async function(e) {
-                e.preventDefault(); // Prevenir envío normal
+                e.preventDefault();
+                
+                // Evitar envíos duplicados
+                if (isSubmitting) {
+                    return;
+                }
                 
                 // Validar formulario
                 if (!form.checkValidity()) {
@@ -281,20 +282,23 @@
                     return;
                 }
                 
+                isSubmitting = true;
+                
                 // Cambiar botón a "enviando"
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
                 submitBtn.disabled = true;
                 
-                // Recopilar datos del formulario
-                const name = form.name.value;
-                const email = form.email.value;
-                const subject = form.subject.value || 'Consulta General';
-                const message = form.message.value;
-                
-                // Crear contenido del email
-                const emailSubject = `💼 Consulta desde tu portafolio - ${subject}`;
-                const emailBody = `Hola Luis,
+                try {
+                    // Recopilar datos del formulario
+                    const name = form.name.value.trim();
+                    const email = form.email.value.trim();
+                    const subject = form.subject.value || 'Consulta General';
+                    const message = form.message.value.trim();
+                    
+                    // Crear contenido del email
+                    const emailSubject = `💼 Consulta desde tu portafolio - ${subject}`;
+                    const emailBody = `Hola Luis,
 
 Has recibido un nuevo mensaje desde tu portafolio web:
 
@@ -312,36 +316,75 @@ Para responder, simplemente responde a este email.
 
 Saludos,
 Tu Portafolio Web`;
-                
-                // Crear enlace mailto
-                const mailtoLink = `mailto:luisvicente1988@hotmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-                
-                // Abrir cliente de email
-                window.location.href = mailtoLink;
-                
-                // Mostrar mensaje de confirmación
-                form.style.display = 'none';
-                formspreeSuccess.innerHTML = `
-                    <i class="fas fa-envelope-open" aria-hidden="true"></i> 
-                    <strong>¡Abriendo tu cliente de email!</strong><br>
-                    Se ha generado un email con tu mensaje. Solo tienes que hacer clic en "Enviar" en tu programa de email.
-                    <hr>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-success" onclick="window.open('https://wa.me/593968189168?text=${encodeURIComponent('Hola Luis, me interesa contactarte sobre: ' + subject)}', '_blank')">
-                            <i class="fas fa-whatsapp"></i> O enviar por WhatsApp
-                        </button>
-                        <button class="btn btn-outline-secondary" onclick="location.reload()">
-                            <i class="fas fa-redo"></i> Enviar otro mensaje
-                        </button>
-                    </div>
-                `;
-                formspreeSuccess.style.display = 'block';
-                formspreeSuccess.scrollIntoView({ behavior: 'smooth' });
-                form.reset();
-                
-                // Restaurar botón
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                    
+                    // Crear enlace mailto
+                    const mailtoLink = `mailto:luisvicente1988@hotmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                    
+                    // Abrir cliente de email
+                    window.location.href = mailtoLink;
+                    
+                    // Mostrar mensaje de confirmación (solo una vez)
+                    form.style.display = 'none';
+                    formspreeSuccess.innerHTML = `
+                        <i class="fas fa-envelope-open" aria-hidden="true"></i> 
+                        <strong>¡Abriendo tu cliente de email!</strong><br>
+                        Se ha generado un email con tu mensaje. Solo tienes que hacer clic en "Enviar" en tu programa de email.
+                        <hr>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success" onclick="window.open('https://wa.me/593968189168?text=${encodeURIComponent('Hola Luis, me interesa contactarte sobre: ' + subject)}', '_blank')">
+                                <i class="fas fa-whatsapp"></i> O enviar por WhatsApp
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="location.reload()">
+                                <i class="fas fa-redo"></i> Enviar otro mensaje
+                            </button>
+                        </div>
+                    `;
+                    formspreeSuccess.style.display = 'block';
+                    formspreeSuccess.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Limpiar formulario
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    
+                } catch (error) {
+                    console.error('Error al procesar el formulario:', error);
+                    
+                    // Mostrar mensaje de error
+                    formspreeSuccess.innerHTML = `
+                        <i class="fas fa-exclamation-triangle text-warning"></i> 
+                        <strong>Ups, algo salió mal</strong><br>
+                        Por favor, intenta contactarme directamente por WhatsApp o email.
+                        <hr>
+                        <div class="d-grid gap-2">
+                            <a href="https://wa.me/593968189168" class="btn btn-success" target="_blank">
+                                <i class="fas fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="mailto:luisvicente1988@hotmail.com" class="btn btn-outline-primary">
+                                <i class="fas fa-envelope"></i> Email directo
+                            </a>
+                        </div>
+                    `;
+                    formspreeSuccess.style.display = 'block';
+                    
+                } finally {
+                    // Restaurar botón
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    isSubmitting = false;
+                }
+            });
+            
+            // Limpiar validación en tiempo real
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                    }
+                });
             });
         });
     </script>
